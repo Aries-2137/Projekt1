@@ -1,4 +1,3 @@
-# Qt/CMake/QMake build directories
 build-*/
 *.pro.user
 *.pro.user.*
@@ -9,7 +8,3 @@ release/
 Makefile*
 .qmake.stash
 .qtc_clangd/
-
-# System files
-.DS_Store
-Thumbs.db
