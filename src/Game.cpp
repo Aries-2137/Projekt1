@@ -138,7 +138,7 @@ void Game::draw(sf::RenderWindow& window) {
 
 
     float hitZoneY = 750.0f;
-    float circleRadius = 45.0f;
+    float circleRadius = 35.0f;
     float rectWidth = 90.0f;
     float rectHeight = 30.0f;
 
