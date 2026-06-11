@@ -24,4 +24,5 @@ public:
 
     int getTotalScore() const;
     void resetCombo();
+
 };

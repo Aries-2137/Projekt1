@@ -6,13 +6,14 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 1. Wskaż folder, w którym wypakowałeś SFML (użyj ukośników /)
-set(SFML_DIR "C:/SFML/lib/cmake/SFML")
+set(SFML_DIR "C:/SFML-2.6.2/lib/cmake/SFML")
 
-# 2. Znajdź bibliotekę SFML
-find_package(SFML 2.6 COMPONENTS graphics window system REQUIRED)
+# 2. Znajdź bibliotekę SFML wraz z modułem audio
+find_package(SFML 2.6 COMPONENTS graphics window system audio REQUIRED)
 
-# 3. Dodaj plik wykonywalny
-add_executable(Projekt_v_1_2 main.cpp
+# 3. Dodaj plik wykonywalny (Tylko pliki źródłowe kodu źródłowego .cpp oraz .h)
+add_executable(Projekt_v_1_2
+    main.cpp
     Game.h
     Game.cpp
     Note.h
@@ -23,15 +24,15 @@ add_executable(Projekt_v_1_2 main.cpp
     ScoreManager.cpp
     InputHandler.h
     InputHandler.cpp
-    music_sequence/muzyka_test.txt
     Interface.h
     Interface.cpp
-    "build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/music_sequence/Lady Pank.txt" build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/music_sequence/muzyka1.txt build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/music_sequence/muzyka2.txt "build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/music_sequence/Utwór 2 level 1.txt" "build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/music_sequence/Utwór 2 level 2.txt")
+    conductor.h conductor.cpp
+)
 
-# 4. PRZEŁOMOWY MOMENT: Linkowanie bibliotek
-# target_link_libraries łączy Twój projekt z bibliotekami SFML
-target_link_libraries(Projekt_v_1_2 PRIVATE sfml-graphics sfml-window sfml-system)
+# 4. Linkowanie bibliotek (Musi być PO instrukcji add_executable!)
+target_link_libraries(Projekt_v_1_2 PRIVATE sfml-graphics sfml-window sfml-system sfml-audio)
 
+# 5. Instalacja (opcjonalna konfiguracja)
 include(GNUInstallDirs)
 install(TARGETS Projekt_v_1_2
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
