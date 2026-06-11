@@ -1,5 +1,5 @@
 CMakeFiles/Projekt_v_1_2.dir/main.cpp.obj: \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt_v_1_2\main.cpp \
+ C:\Users\User\Desktop\Nowy\ folder\main.cpp \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -174,20 +174,23 @@ CMakeFiles/Projekt_v_1_2.dir/main.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_dir.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fs_ops.h \
- C:/SFML/include/SFML/Graphics.hpp C:/SFML/include/SFML/Window.hpp \
- C:/SFML/include/SFML/System.hpp C:/SFML/include/SFML/Config.hpp \
- C:/SFML/include/SFML/System/Clock.hpp \
- C:/SFML/include/SFML/System/Export.hpp \
- C:/SFML/include/SFML/System/Time.hpp C:/SFML/include/SFML/System/Err.hpp \
- C:/SFML/include/SFML/System/FileInputStream.hpp \
- C:/SFML/include/SFML/System/InputStream.hpp \
- C:/SFML/include/SFML/System/NonCopyable.hpp \
- C:/SFML/include/SFML/System/Lock.hpp \
- C:/SFML/include/SFML/System/MemoryInputStream.hpp \
- C:/SFML/include/SFML/System/Mutex.hpp \
- C:/SFML/include/SFML/System/Sleep.hpp \
- C:/SFML/include/SFML/System/String.hpp \
- C:/SFML/include/SFML/System/Utf.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics.hpp \
+ C:/SFML-2.6.2/include/SFML/Window.hpp \
+ C:/SFML-2.6.2/include/SFML/System.hpp \
+ C:/SFML-2.6.2/include/SFML/Config.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Clock.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Export.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Time.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Err.hpp \
+ C:/SFML-2.6.2/include/SFML/System/FileInputStream.hpp \
+ C:/SFML-2.6.2/include/SFML/System/InputStream.hpp \
+ C:/SFML-2.6.2/include/SFML/System/NonCopyable.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Lock.hpp \
+ C:/SFML-2.6.2/include/SFML/System/MemoryInputStream.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Mutex.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Sleep.hpp \
+ C:/SFML-2.6.2/include/SFML/System/String.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Utf.hpp \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/algorithmfwd.h \
@@ -196,79 +199,99 @@ CMakeFiles/Projekt_v_1_2.dir/main.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_algorithm_defs.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
- C:/SFML/include/SFML/System/Utf.inl \
+ C:/SFML-2.6.2/include/SFML/System/Utf.inl \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stream_iterator.h \
- C:/SFML/include/SFML/System/String.inl \
- C:/SFML/include/SFML/System/Thread.hpp \
- C:/SFML/include/SFML/System/Thread.inl \
- C:/SFML/include/SFML/System/ThreadLocal.hpp \
- C:/SFML/include/SFML/System/ThreadLocalPtr.hpp \
- C:/SFML/include/SFML/System/ThreadLocalPtr.inl \
- C:/SFML/include/SFML/System/Vector2.hpp \
- C:/SFML/include/SFML/System/Vector2.inl \
- C:/SFML/include/SFML/System/Vector3.hpp \
- C:/SFML/include/SFML/System/Vector3.inl \
- C:/SFML/include/SFML/Window/Clipboard.hpp \
- C:/SFML/include/SFML/Window/Export.hpp \
- C:/SFML/include/SFML/Window/Context.hpp \
- C:/SFML/include/SFML/Window/GlResource.hpp \
- C:/SFML/include/SFML/Window/ContextSettings.hpp \
- C:/SFML/include/SFML/Window/Cursor.hpp \
- C:/SFML/include/SFML/Window/Event.hpp \
- C:/SFML/include/SFML/Window/Joystick.hpp \
- C:/SFML/include/SFML/Window/Keyboard.hpp \
- C:/SFML/include/SFML/Window/Mouse.hpp \
- C:/SFML/include/SFML/Window/Sensor.hpp \
- C:/SFML/include/SFML/Window/Touch.hpp \
- C:/SFML/include/SFML/Window/VideoMode.hpp \
+ C:/SFML-2.6.2/include/SFML/System/String.inl \
+ C:/SFML-2.6.2/include/SFML/System/Thread.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Thread.inl \
+ C:/SFML-2.6.2/include/SFML/System/ThreadLocal.hpp \
+ C:/SFML-2.6.2/include/SFML/System/ThreadLocalPtr.hpp \
+ C:/SFML-2.6.2/include/SFML/System/ThreadLocalPtr.inl \
+ C:/SFML-2.6.2/include/SFML/System/Vector2.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Vector2.inl \
+ C:/SFML-2.6.2/include/SFML/System/Vector3.hpp \
+ C:/SFML-2.6.2/include/SFML/System/Vector3.inl \
+ C:/SFML-2.6.2/include/SFML/Window/Clipboard.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Export.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Context.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/GlResource.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/ContextSettings.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Cursor.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Event.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Joystick.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Keyboard.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Mouse.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Sensor.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Touch.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/VideoMode.hpp \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:/SFML/include/SFML/Window/Window.hpp \
- C:/SFML/include/SFML/Window/WindowBase.hpp \
- C:/SFML/include/SFML/Window/Vulkan.hpp \
- C:/SFML/include/SFML/Window/WindowHandle.hpp \
- C:/SFML/include/SFML/Window/WindowStyle.hpp \
- C:/SFML/include/SFML/Graphics/BlendMode.hpp \
- C:/SFML/include/SFML/Graphics/Export.hpp \
- C:/SFML/include/SFML/Graphics/CircleShape.hpp \
- C:/SFML/include/SFML/Graphics/Shape.hpp \
- C:/SFML/include/SFML/Graphics/Drawable.hpp \
- C:/SFML/include/SFML/Graphics/RenderStates.hpp \
- C:/SFML/include/SFML/Graphics/Transform.hpp \
- C:/SFML/include/SFML/Graphics/Rect.hpp \
- C:/SFML/include/SFML/Graphics/Rect.inl \
- C:/SFML/include/SFML/Graphics/Transformable.hpp \
- C:/SFML/include/SFML/Graphics/VertexArray.hpp \
- C:/SFML/include/SFML/Graphics/Vertex.hpp \
- C:/SFML/include/SFML/Graphics/Color.hpp \
- C:/SFML/include/SFML/Graphics/PrimitiveType.hpp \
- C:/SFML/include/SFML/Graphics/ConvexShape.hpp \
- C:/SFML/include/SFML/Graphics/Font.hpp \
- C:/SFML/include/SFML/Graphics/Glyph.hpp \
- C:/SFML/include/SFML/Graphics/Texture.hpp \
- C:/SFML/include/SFML/Graphics/Image.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Window.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/WindowBase.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/Vulkan.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/WindowHandle.hpp \
+ C:/SFML-2.6.2/include/SFML/Window/WindowStyle.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/BlendMode.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Export.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/CircleShape.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Shape.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Drawable.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/RenderStates.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Transform.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Rect.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Rect.inl \
+ C:/SFML-2.6.2/include/SFML/Graphics/Transformable.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/VertexArray.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Vertex.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Color.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/PrimitiveType.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/ConvexShape.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Font.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Glyph.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Texture.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Image.hpp \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tree.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_map.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
- C:/SFML/include/SFML/Graphics/RectangleShape.hpp \
- C:/SFML/include/SFML/Graphics/RenderTarget.hpp \
- C:/SFML/include/SFML/Graphics/View.hpp \
- C:/SFML/include/SFML/Graphics/RenderTexture.hpp \
- C:/SFML/include/SFML/Graphics/RenderWindow.hpp \
- C:/SFML/include/SFML/Graphics/Shader.hpp \
- C:/SFML/include/SFML/Graphics/Glsl.hpp \
- C:/SFML/include/SFML/Graphics/Glsl.inl \
- C:/SFML/include/SFML/Graphics/Sprite.hpp \
- C:/SFML/include/SFML/Graphics/Text.hpp \
- C:/SFML/include/SFML/Graphics/VertexBuffer.hpp \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt_v_1_2\Game.h \
+ C:/SFML-2.6.2/include/SFML/Graphics/RectangleShape.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/RenderTarget.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/View.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/RenderTexture.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/RenderWindow.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Shader.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Glsl.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Glsl.inl \
+ C:/SFML-2.6.2/include/SFML/Graphics/Sprite.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/Text.hpp \
+ C:/SFML-2.6.2/include/SFML/Graphics/VertexBuffer.hpp \
+ C:\Users\User\Desktop\Nowy\ folder\Game.h \
+ C:/SFML-2.6.2/include/SFML/Audio.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/InputSoundFile.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/Export.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/Listener.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/Music.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/SoundStream.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/SoundSource.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/AlResource.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/OutputSoundFile.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/Sound.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/SoundBuffer.hpp \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
+ C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h \
+ C:/SFML-2.6.2/include/SFML/Audio/SoundBufferRecorder.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/SoundRecorder.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/SoundFileFactory.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/SoundFileFactory.inl \
+ C:/SFML-2.6.2/include/SFML/Audio/SoundFileReader.hpp \
+ C:/SFML-2.6.2/include/SFML/Audio/SoundFileWriter.hpp \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/memory \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_raw_storage_iter.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/align.h \
@@ -277,7 +300,8 @@ CMakeFiles/Projekt_v_1_2.dir/main.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_lockfree_defines.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/auto_ptr.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt_v_1_2\InputHandler.h \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt_v_1_2\Note.h \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt_v_1_2\ScoreManager.h \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt_v_1_2\Interface.h
+ C:\Users\User\Desktop\Nowy\ folder\Note.h \
+ C:\Users\User\Desktop\Nowy\ folder\InputHandler.h \
+ C:\Users\User\Desktop\Nowy\ folder\ScoreManager.h \
+ C:\Users\User\Desktop\Nowy\ folder\Interface.h \
+ C:\Users\User\Desktop\Nowy\ folder\Conductor.h

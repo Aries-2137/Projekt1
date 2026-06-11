@@ -1,1 +1,1 @@
--isystem C:/SFML/include
+-isystem "C:/SFML-2.6.2/include"

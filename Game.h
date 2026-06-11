@@ -18,7 +18,7 @@ struct Feedback {
 
 class Game {
 public:
-    Game(const std::string& songFilename);
+    Game(const std::string& songFilename);//help me plz test zolwia cy czos
     ~Game();
 
     void update(float deltaTime, float currentTimeMs);

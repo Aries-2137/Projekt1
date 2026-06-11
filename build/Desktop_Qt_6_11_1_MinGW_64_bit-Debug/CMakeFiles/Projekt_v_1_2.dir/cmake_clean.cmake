@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Projekt_v_1_2.dir/NoteType.cpp.obj.d"
   "CMakeFiles/Projekt_v_1_2.dir/ScoreManager.cpp.obj"
   "CMakeFiles/Projekt_v_1_2.dir/ScoreManager.cpp.obj.d"
+  "CMakeFiles/Projekt_v_1_2.dir/conductor.cpp.obj"
+  "CMakeFiles/Projekt_v_1_2.dir/conductor.cpp.obj.d"
   "CMakeFiles/Projekt_v_1_2.dir/main.cpp.obj"
   "CMakeFiles/Projekt_v_1_2.dir/main.cpp.obj.d"
   "Projekt_v_1_2.exe"

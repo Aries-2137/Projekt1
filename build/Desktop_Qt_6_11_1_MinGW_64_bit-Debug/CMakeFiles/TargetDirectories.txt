@@ -1,7 +1,7 @@
-C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt_v_1_2/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/Projekt_v_1_2.dir
-C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt_v_1_2/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt_v_1_2/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt_v_1_2/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
-C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt_v_1_2/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/install.dir
-C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt_v_1_2/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
-C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt_v_1_2/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
+C:/Users/User/Desktop/Nowy folder/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/Projekt_v_1_2.dir
+C:/Users/User/Desktop/Nowy folder/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+C:/Users/User/Desktop/Nowy folder/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+C:/Users/User/Desktop/Nowy folder/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+C:/Users/User/Desktop/Nowy folder/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/install.dir
+C:/Users/User/Desktop/Nowy folder/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+C:/Users/User/Desktop/Nowy folder/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir

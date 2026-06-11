@@ -1,6 +1,6 @@
 CMakeFiles/Projekt_v_1_2.dir/ScoreManager.cpp.obj: \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt_v_1_2\ScoreManager.cpp \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt_v_1_2\ScoreManager.h \
+ C:\Users\User\Desktop\Nowy\ folder\ScoreManager.cpp \
+ C:\Users\User\Desktop\Nowy\ folder\ScoreManager.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/string \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \

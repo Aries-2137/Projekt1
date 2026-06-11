@@ -56,10 +56,10 @@ RM = C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt_v_1_2"
+CMAKE_SOURCE_DIR = "C:\Users\User\Desktop\Nowy folder"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt_v_1_2\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug"
+CMAKE_BINARY_DIR = "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -131,9 +131,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt_v_1_2\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt_v_1_2\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt_v_1_2\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -317,6 +317,30 @@ ScoreManager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/ScoreManager.cpp.s
 .PHONY : ScoreManager.cpp.s
 
+conductor.obj: conductor.cpp.obj
+.PHONY : conductor.obj
+
+# target to build an object file
+conductor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/conductor.cpp.obj
+.PHONY : conductor.cpp.obj
+
+conductor.i: conductor.cpp.i
+.PHONY : conductor.i
+
+# target to preprocess a source file
+conductor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/conductor.cpp.i
+.PHONY : conductor.cpp.i
+
+conductor.s: conductor.cpp.s
+.PHONY : conductor.s
+
+# target to generate assembly for a file
+conductor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/conductor.cpp.s
+.PHONY : conductor.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -372,6 +396,9 @@ help:
 	@echo ... ScoreManager.obj
 	@echo ... ScoreManager.i
 	@echo ... ScoreManager.s
+	@echo ... conductor.obj
+	@echo ... conductor.i
+	@echo ... conductor.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
