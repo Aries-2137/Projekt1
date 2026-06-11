@@ -56,10 +56,10 @@ RM = C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\User\Desktop\Nowy folder"
+CMAKE_SOURCE_DIR = "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug"
+CMAKE_BINARY_DIR = "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -131,9 +131,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -173,197 +173,197 @@ Projekt_v_1_2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/build
 .PHONY : Projekt_v_1_2/fast
 
-Game.obj: Game.cpp.obj
-.PHONY : Game.obj
+src/Game.obj: src/Game.cpp.obj
+.PHONY : src/Game.obj
 
 # target to build an object file
-Game.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/Game.cpp.obj
-.PHONY : Game.cpp.obj
+src/Game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj
+.PHONY : src/Game.cpp.obj
 
-Game.i: Game.cpp.i
-.PHONY : Game.i
+src/Game.i: src/Game.cpp.i
+.PHONY : src/Game.i
 
 # target to preprocess a source file
-Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/Game.cpp.i
-.PHONY : Game.cpp.i
+src/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.i
+.PHONY : src/Game.cpp.i
 
-Game.s: Game.cpp.s
-.PHONY : Game.s
+src/Game.s: src/Game.cpp.s
+.PHONY : src/Game.s
 
 # target to generate assembly for a file
-Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/Game.cpp.s
-.PHONY : Game.cpp.s
+src/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.s
+.PHONY : src/Game.cpp.s
 
-InputHandler.obj: InputHandler.cpp.obj
-.PHONY : InputHandler.obj
+src/InputHandler.obj: src/InputHandler.cpp.obj
+.PHONY : src/InputHandler.obj
 
 # target to build an object file
-InputHandler.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/InputHandler.cpp.obj
-.PHONY : InputHandler.cpp.obj
+src/InputHandler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj
+.PHONY : src/InputHandler.cpp.obj
 
-InputHandler.i: InputHandler.cpp.i
-.PHONY : InputHandler.i
+src/InputHandler.i: src/InputHandler.cpp.i
+.PHONY : src/InputHandler.i
 
 # target to preprocess a source file
-InputHandler.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/InputHandler.cpp.i
-.PHONY : InputHandler.cpp.i
+src/InputHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.i
+.PHONY : src/InputHandler.cpp.i
 
-InputHandler.s: InputHandler.cpp.s
-.PHONY : InputHandler.s
+src/InputHandler.s: src/InputHandler.cpp.s
+.PHONY : src/InputHandler.s
 
 # target to generate assembly for a file
-InputHandler.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/InputHandler.cpp.s
-.PHONY : InputHandler.cpp.s
+src/InputHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.s
+.PHONY : src/InputHandler.cpp.s
 
-Interface.obj: Interface.cpp.obj
-.PHONY : Interface.obj
+src/Interface.obj: src/Interface.cpp.obj
+.PHONY : src/Interface.obj
 
 # target to build an object file
-Interface.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/Interface.cpp.obj
-.PHONY : Interface.cpp.obj
+src/Interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj
+.PHONY : src/Interface.cpp.obj
 
-Interface.i: Interface.cpp.i
-.PHONY : Interface.i
+src/Interface.i: src/Interface.cpp.i
+.PHONY : src/Interface.i
 
 # target to preprocess a source file
-Interface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/Interface.cpp.i
-.PHONY : Interface.cpp.i
+src/Interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.i
+.PHONY : src/Interface.cpp.i
 
-Interface.s: Interface.cpp.s
-.PHONY : Interface.s
+src/Interface.s: src/Interface.cpp.s
+.PHONY : src/Interface.s
 
 # target to generate assembly for a file
-Interface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/Interface.cpp.s
-.PHONY : Interface.cpp.s
+src/Interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.s
+.PHONY : src/Interface.cpp.s
 
-Note.obj: Note.cpp.obj
-.PHONY : Note.obj
+src/Note.obj: src/Note.cpp.obj
+.PHONY : src/Note.obj
 
 # target to build an object file
-Note.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/Note.cpp.obj
-.PHONY : Note.cpp.obj
+src/Note.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj
+.PHONY : src/Note.cpp.obj
 
-Note.i: Note.cpp.i
-.PHONY : Note.i
+src/Note.i: src/Note.cpp.i
+.PHONY : src/Note.i
 
 # target to preprocess a source file
-Note.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/Note.cpp.i
-.PHONY : Note.cpp.i
+src/Note.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.i
+.PHONY : src/Note.cpp.i
 
-Note.s: Note.cpp.s
-.PHONY : Note.s
+src/Note.s: src/Note.cpp.s
+.PHONY : src/Note.s
 
 # target to generate assembly for a file
-Note.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/Note.cpp.s
-.PHONY : Note.cpp.s
+src/Note.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.s
+.PHONY : src/Note.cpp.s
 
-NoteType.obj: NoteType.cpp.obj
-.PHONY : NoteType.obj
+src/NoteType.obj: src/NoteType.cpp.obj
+.PHONY : src/NoteType.obj
 
 # target to build an object file
-NoteType.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/NoteType.cpp.obj
-.PHONY : NoteType.cpp.obj
+src/NoteType.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj
+.PHONY : src/NoteType.cpp.obj
 
-NoteType.i: NoteType.cpp.i
-.PHONY : NoteType.i
+src/NoteType.i: src/NoteType.cpp.i
+.PHONY : src/NoteType.i
 
 # target to preprocess a source file
-NoteType.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/NoteType.cpp.i
-.PHONY : NoteType.cpp.i
+src/NoteType.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.i
+.PHONY : src/NoteType.cpp.i
 
-NoteType.s: NoteType.cpp.s
-.PHONY : NoteType.s
+src/NoteType.s: src/NoteType.cpp.s
+.PHONY : src/NoteType.s
 
 # target to generate assembly for a file
-NoteType.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/NoteType.cpp.s
-.PHONY : NoteType.cpp.s
+src/NoteType.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.s
+.PHONY : src/NoteType.cpp.s
 
-ScoreManager.obj: ScoreManager.cpp.obj
-.PHONY : ScoreManager.obj
+src/ScoreManager.obj: src/ScoreManager.cpp.obj
+.PHONY : src/ScoreManager.obj
 
 # target to build an object file
-ScoreManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/ScoreManager.cpp.obj
-.PHONY : ScoreManager.cpp.obj
+src/ScoreManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj
+.PHONY : src/ScoreManager.cpp.obj
 
-ScoreManager.i: ScoreManager.cpp.i
-.PHONY : ScoreManager.i
+src/ScoreManager.i: src/ScoreManager.cpp.i
+.PHONY : src/ScoreManager.i
 
 # target to preprocess a source file
-ScoreManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/ScoreManager.cpp.i
-.PHONY : ScoreManager.cpp.i
+src/ScoreManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.i
+.PHONY : src/ScoreManager.cpp.i
 
-ScoreManager.s: ScoreManager.cpp.s
-.PHONY : ScoreManager.s
+src/ScoreManager.s: src/ScoreManager.cpp.s
+.PHONY : src/ScoreManager.s
 
 # target to generate assembly for a file
-ScoreManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/ScoreManager.cpp.s
-.PHONY : ScoreManager.cpp.s
+src/ScoreManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.s
+.PHONY : src/ScoreManager.cpp.s
 
-conductor.obj: conductor.cpp.obj
-.PHONY : conductor.obj
+src/conductor.obj: src/conductor.cpp.obj
+.PHONY : src/conductor.obj
 
 # target to build an object file
-conductor.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/conductor.cpp.obj
-.PHONY : conductor.cpp.obj
+src/conductor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj
+.PHONY : src/conductor.cpp.obj
 
-conductor.i: conductor.cpp.i
-.PHONY : conductor.i
+src/conductor.i: src/conductor.cpp.i
+.PHONY : src/conductor.i
 
 # target to preprocess a source file
-conductor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/conductor.cpp.i
-.PHONY : conductor.cpp.i
+src/conductor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.i
+.PHONY : src/conductor.cpp.i
 
-conductor.s: conductor.cpp.s
-.PHONY : conductor.s
+src/conductor.s: src/conductor.cpp.s
+.PHONY : src/conductor.s
 
 # target to generate assembly for a file
-conductor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/conductor.cpp.s
-.PHONY : conductor.cpp.s
+src/conductor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.s
+.PHONY : src/conductor.cpp.s
 
-main.obj: main.cpp.obj
-.PHONY : main.obj
+src/main.obj: src/main.cpp.obj
+.PHONY : src/main.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
 
-main.i: main.cpp.i
-.PHONY : main.i
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -378,30 +378,30 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... Projekt_v_1_2
-	@echo ... Game.obj
-	@echo ... Game.i
-	@echo ... Game.s
-	@echo ... InputHandler.obj
-	@echo ... InputHandler.i
-	@echo ... InputHandler.s
-	@echo ... Interface.obj
-	@echo ... Interface.i
-	@echo ... Interface.s
-	@echo ... Note.obj
-	@echo ... Note.i
-	@echo ... Note.s
-	@echo ... NoteType.obj
-	@echo ... NoteType.i
-	@echo ... NoteType.s
-	@echo ... ScoreManager.obj
-	@echo ... ScoreManager.i
-	@echo ... ScoreManager.s
-	@echo ... conductor.obj
-	@echo ... conductor.i
-	@echo ... conductor.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... src/Game.obj
+	@echo ... src/Game.i
+	@echo ... src/Game.s
+	@echo ... src/InputHandler.obj
+	@echo ... src/InputHandler.i
+	@echo ... src/InputHandler.s
+	@echo ... src/Interface.obj
+	@echo ... src/Interface.i
+	@echo ... src/Interface.s
+	@echo ... src/Note.obj
+	@echo ... src/Note.i
+	@echo ... src/Note.s
+	@echo ... src/NoteType.obj
+	@echo ... src/NoteType.i
+	@echo ... src/NoteType.s
+	@echo ... src/ScoreManager.obj
+	@echo ... src/ScoreManager.i
+	@echo ... src/ScoreManager.s
+	@echo ... src/conductor.obj
+	@echo ... src/conductor.i
+	@echo ... src/conductor.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 .PHONY : help
 
 
