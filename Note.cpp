@@ -6,7 +6,7 @@ Note::Note(int lane, int targetTime, int duration, float speed, float rotationSp
 
 void Note::updateSynced(float currentSongPositionMs) {
     float timeDifference = static_cast<float>(targetTime) - currentSongPositionMs;
-    yPos = 850.0f - (timeDifference * 0.5f);
+    yPos = 850.0f - (timeDifference * 1.0f);
     rotation = currentSongPositionMs * (rotationSpeed / 100.0f);
 }
 

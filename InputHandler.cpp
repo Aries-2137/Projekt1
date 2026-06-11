@@ -40,7 +40,7 @@ void InputHandler::handleKeyPress(char key, float currentTimeMs, std::vector<std
         float diff = std::abs((*closestNoteIt)->getTargetTime() - currentTimeMs);
 
         // Nuta musi znajdować się w strefie kliknięcia (Y > 600)
-        if (diff <= 150.0f && noteY > 600.0f) {
+        if (diff <= 150.0f) { // Sprawdzamy tylko różnicę czasu (muzyka vs targetTime)
             game.triggerReceptorAnimation(targetLane);
             int duration = (*closestNoteIt)->getDuration();
             activeNotes.erase(closestNoteIt);

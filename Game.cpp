@@ -9,7 +9,7 @@
 #include <cmath>
 
 Game::Game(const std::string& songFilename)
-    : currentSongFile(songFilename), lastUpdatedTime(0.0f), hasStarted(false)
+    : currentSongFile(songFilename), lastUpdatedTime(0.0f)
 {
     if (!font.loadFromFile("arial.ttf")) {
         std::cerr << "Blad: Nie udalo sie wczytac czcionki arial.ttf do gry!\n";
@@ -31,73 +31,61 @@ void Game::loadSongSequence(const std::string& filename) {
 
     std::string fullPath = "music_sequence/" + filename;
     std::ifstream file(fullPath);
-    if (!file.is_open()) {
-        std::cerr << "BLAD: Nie mozna otworzyc pliku: " << fullPath << std::endl;
-        return;
-    }
+    if (!file.is_open()) return;
 
-    allNotes.clear();
     std::string line;
-    float songBpm = 120.0f; // Domyślne BPM
+    float songBpm = 120.0f;
 
     while (std::getline(file, line)) {
         if (line.empty()) continue;
-
-        // Jeśli linia zawiera "BPM", parsujemy liczbę
         if (line.find("BPM") != std::string::npos) {
-            std::stringstream ss(line);
-            std::string temp;
-            ss >> temp >> songBpm; // Pomija słowo "BPM", wczytuje wartość liczbową
-            std::cout << "Wykryto BPM w pliku: " << songBpm << std::endl;
-        }
-        // W przeciwnym razie traktujemy linię jako nutę: "lane time duration"
-        else {
-            std::stringstream ss(line);
-            int lane, time, duration;
-            if (ss >> lane >> time >> duration) {
-                if (duration == 1) allNotes.push_back(std::make_unique<NoteType1>(lane, time, 1.0f, 0.0f));
-                else if (duration == 2) allNotes.push_back(std::make_unique<NoteType2>(lane, time, 1.0f, 0.0f));
-                else if (duration == 3) allNotes.push_back(std::make_unique<NoteType3>(lane, time, 1.0f, 0.0f));
-                else if (duration == 4) allNotes.push_back(std::make_unique<NoteType4>(lane, time, 1.0f, 0.0f));
-                else if (duration == 5) allNotes.push_back(std::make_unique<NoteType5>(lane, time, 1.0f, 0.0f));
+            std::string clean = "";
+            for (char c : line) {
+                if (std::isdigit(static_cast<unsigned char>(c)) || c == '.') clean += c;
             }
+            if (!clean.empty()) songBpm = std::stof(clean);
+            continue;
+        }
+
+        for (char &c : line) {
+            if (!std::isdigit(static_cast<unsigned char>(c)) && c != ' ' && c != '-' && c != '\t') c = ' ';
+        }
+
+        std::stringstream ss(line);
+        int lane, time, duration;
+        if (ss >> lane >> time >> duration) {
+            float speed = 450.0f;
+            float rotSpeed = 90.0f;
+            if (duration == 1) allNotes.push_back(std::make_unique<NoteType1>(lane, time, speed, rotSpeed));
+            else if (duration == 2) allNotes.push_back(std::make_unique<NoteType2>(lane, time, speed, rotSpeed));
+            else if (duration == 3) allNotes.push_back(std::make_unique<NoteType3>(lane, time, speed, rotSpeed));
+            else if (duration == 4) allNotes.push_back(std::make_unique<NoteType4>(lane, time, speed, rotSpeed));
+            else if (duration == 5) allNotes.push_back(std::make_unique<NoteType5>(lane, time, speed, rotSpeed));
         }
     }
+    file.close();
 
-    // Ważne: Po wczytaniu nut, przekazujemy BPM do Conductora
-    Conductor::initialize(songBpm, 0.0f);
-    std::cout << "Wczytano " << allNotes.size() << " nut." << std::endl;
+    song.stop();
+    std::string audioPath = "music_sequence/" + filename;
+    size_t extPos = audioPath.find_last_of(".");
+    if (extPos != std::string::npos) audioPath = audioPath.substr(0, extPos) + ".ogg";
+
+    if (song.openFromFile(audioPath)) {
+        song.setVolume(50.0f);
+        song.play();
+        Conductor::initialize(songBpm, 0.0f);
+    }
 }
 
 void Game::loadNewSong(const std::string& filename) {
-    if (filename.empty()) {
-        song.stop();
-        hasStarted = false;
-        return;
-    }
-
-    // 1. Wczytaj nuty i BPM
-    loadSongSequence(filename);
-
-    // 2. Przygotuj plik audio (.ogg)
-    std::string audioFilename = filename;
-    size_t lastDot = audioFilename.find_last_of(".");
-    if (lastDot != std::string::npos) {
-        audioFilename = audioFilename.substr(0, lastDot) + ".ogg";
-    }
-
-    std::string fullPath = "music_sequence/" + audioFilename;
+    activeNotes.clear();
+    allNotes.clear();
+    feedbacks.clear();
     song.stop();
-    hasStarted = false;
-
-    if (!song.openFromFile(fullPath)) {
-        std::cerr << "BLAD: Nie mozna otworzyc audio: " << fullPath << std::endl;
-        return;
-    }
-
-    song.play();
-    hasStarted = true;
+    currentSongFile = filename;
+    loadSongSequence(currentSongFile);
 }
+
 void Game::update(float deltaTime, float currentTimeMs) {
     Conductor::update(song);
     float audioTimeMs = Conductor::songPosition;
