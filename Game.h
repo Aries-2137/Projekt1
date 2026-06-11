@@ -31,13 +31,15 @@ public:
     void addFeedback(int lane, const std::string& text, sf::Color color);
 
     std::vector<std::unique_ptr<Note>>& getNotes() { return activeNotes; }
-    bool isSongFinished() const { return song.getStatus() == sf::SoundStream::Stopped; }
+
+    // Poprawiona logika sprawdzania stanu
+    bool isSongFinished() const { return hasStarted && song.getStatus() == sf::SoundStream::Stopped; }
 
 private:
     std::string currentSongFile;
     sf::Font font;
-
     sf::Music song;
+    bool hasStarted = false; // Flaga zabezpieczająca
 
     std::vector<std::unique_ptr<Note>> allNotes;
     std::vector<std::unique_ptr<Note>> activeNotes;
