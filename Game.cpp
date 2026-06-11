@@ -135,16 +135,19 @@ void Game::update(float deltaTime, float currentTimeMs) {
 void Game::draw(sf::RenderWindow& window) {
     float startX = 150.0f;
     float spacing = 100.0f;
-    float hitZoneY = 850.0f;
+
+
+    float hitZoneY = 750.0f;
+    float circleRadius = 45.0f;
     float rectWidth = 90.0f;
     float rectHeight = 30.0f;
 
-    // ZASADA BEAT PROGRESS: Wyznaczanie pulsującej jasności linii (zanikanie od uderzenia)
     int lineBrightness = static_cast<int>(50.0f + (1.0f - Conductor::beatProgress) * 40.0f);
     sf::Color linePulseColor(lineBrightness, lineBrightness, lineBrightness);
 
     for (int i = 1; i <= 5; ++i) {
         float xPos = startX + (i - 1) * spacing;
+
 
         sf::Vertex line[] = {
             sf::Vertex(sf::Vector2f(xPos, 0.0f), linePulseColor),
@@ -152,11 +155,12 @@ void Game::draw(sf::RenderWindow& window) {
         };
         window.draw(line, 2, sf::Lines);
 
-        sf::RectangleShape receptor(sf::Vector2f(rectWidth, rectHeight));
-        receptor.setOrigin(rectWidth / 2.0f, rectHeight / 2.0f);
+
+        sf::CircleShape receptor(circleRadius);
+        receptor.setOrigin(circleRadius, circleRadius);
         receptor.setPosition(xPos, hitZoneY);
         receptor.setFillColor(sf::Color::Transparent);
-        receptor.setOutlineThickness(3.0f);
+        receptor.setOutlineThickness(4.0f);
         receptor.setScale(receptorScales[i - 1], receptorScales[i - 1]);
 
         switch (i) {
@@ -168,9 +172,10 @@ void Game::draw(sf::RenderWindow& window) {
         }
         window.draw(receptor);
 
+        // Rysowanie małych prostokątów podpowiedzi (podświetlenie linii)
         sf::RectangleShape hintRect(sf::Vector2f(rectWidth, rectHeight));
         hintRect.setOrigin(rectWidth / 2.0f, rectHeight / 2.0f);
-        hintRect.setPosition(xPos, hitZoneY + 50.0f);
+        hintRect.setPosition(xPos, hitZoneY + 60.0f); // Obniżone lekko pod kółko
 
         if (lastUpdatedTime < laneHighlightEndTime[i - 1]) {
             hintRect.setFillColor(sf::Color::White);
