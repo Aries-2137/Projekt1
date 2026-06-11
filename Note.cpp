@@ -1,23 +1,13 @@
 #include "Note.h"
-#include <iostream>
-
 
 Note::Note(int lane, int targetTime, int duration, float speed, float rotationSpeed)
-    : lane(lane), targetTime(targetTime), duration(duration),
-    yPos(-100.0f),
-    speed(speed), rotation(0.0f), rotationSpeed(rotationSpeed)
-{
-}
+    : lane(lane), targetTime(targetTime), duration(duration), yPos(-100.0f),
+    speed(speed), rotation(0.0f), rotationSpeed(rotationSpeed) {}
 
-void Note::update(float deltaTime) {
-    // Ruch liniowy w osi Y
-    yPos += speed * deltaTime;
-
-    rotation += rotationSpeed * deltaTime;
-
-    if (rotation >= 360.0f) {
-        rotation -= 360.0f;
-    }
+void Note::updateSynced(float currentSongPositionMs) {
+    float timeDifference = static_cast<float>(targetTime) - currentSongPositionMs;
+    yPos = 850.0f - (timeDifference * 0.5f);
+    rotation = currentSongPositionMs * (rotationSpeed / 100.0f);
 }
 
 int Note::getLane() const { return lane; }

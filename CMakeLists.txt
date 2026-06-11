@@ -26,6 +26,7 @@ add_executable(Projekt_v_1_2
     InputHandler.cpp
     Interface.h
     Interface.cpp
+    conductor.h conductor.cpp
 )
 
 # 4. Linkowanie bibliotek (Musi być PO instrukcji add_executable!)

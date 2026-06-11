@@ -6,6 +6,7 @@
 #include "InputHandler.h"
 #include "ScoreManager.h"
 #include "Interface.h"
+#include "Conductor.h" // <--- Dodano nagłówek Conductora
 
 int main() {
     std::cout << "--- Start Gry: AGH ---\n";
@@ -43,55 +44,48 @@ int main() {
             if (event.type == sf::Event::Closed)
                 window.close();
 
-            if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
-                sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+            // POPRAWKA: Przechwytywanie kliknięć klawiszy zsynchronizowane z muzyką
+            if (event.type == sf::Event::KeyPressed) {
+                char keyPressedLocal = '\0';
+                if (event.key.code == sf::Keyboard::S) keyPressedLocal = 'S';
+                else if (event.key.code == sf::Keyboard::D) keyPressedLocal = 'D';
+                else if (event.key.code == sf::Keyboard::Space) keyPressedLocal = ' ';
+                else if (event.key.code == sf::Keyboard::J) keyPressedLocal = 'J';
+                else if (event.key.code == sf::Keyboard::K) keyPressedLocal = 'K';
 
-                // MYSZKA LOG: Wypisuje współrzędne każdego kliknięcia
-                std::cout << "[MYSZKA]: Kliknieto X: " << mousePos.x << ", Y: " << mousePos.y << " | Aktualny Stan Gry: " << (int)currentState << std::endl;
-
-                if (currentState == GameState::MENU) {
-                    currentState = interface.handleMenuClick(mousePos);
-                }
-                else if (currentState == GameState::SONG_SELECT) {
-                    std::string selectedSong = interface.handleSongSelectClick(mousePos);
-
-                    // INTERFEJS LOG: Pokazuje, co funkcja z Interface.cpp przekazała do silnika gry
-                    std::cout << "[INTERFEJS]: handleSongSelectClick zwrocil nazwe: '" << selectedSong << "'\n";
-
-                    if (!selectedSong.empty()) {
-                        game.loadNewSong(selectedSong);
-
-                        startTime = std::chrono::high_resolution_clock::now();
-                        previousTime = startTime;
-                        currentState = GameState::PLAYING;
-                    }
+                if (keyPressedLocal != '\0') {
+                    // Jeśli gramy, przekazujemy pozycję piosenki z Conductora, w menu zwykły czas aplikacji
+                    float gameplayTime = (currentState == GameState::PLAYING) ? Conductor::songPosition : currentTimeMs;
+                    inputHandler.handleKeyPress(keyPressedLocal, gameplayTime, game.getNotes(), game);
                 }
             }
 
-            if (currentState == GameState::PLAYING) {
-                if (event.type == sf::Event::KeyPressed) {
-                    char keypressed = '\0';
-                    if (event.key.code == sf::Keyboard::S) keypressed = 'S';
-                    else if (event.key.code == sf::Keyboard::D) keypressed = 'D';
-                    else if (event.key.code == sf::Keyboard::Space) keypressed = ' ';
-                    else if (event.key.code == sf::Keyboard::J) keypressed = 'J';
-                    else if (event.key.code == sf::Keyboard::K) keypressed = 'K';
+            if (event.type == sf::Event::KeyReleased) {
+                char keyreleasedLocal = '\0';
+                if (event.key.code == sf::Keyboard::S) keyreleasedLocal = 'S';
+                else if (event.key.code == sf::Keyboard::D) keyreleasedLocal = 'D';
+                else if (event.key.code == sf::Keyboard::Space) keyreleasedLocal = ' ';
+                else if (event.key.code == sf::Keyboard::J) keyreleasedLocal = 'J';
+                else if (event.key.code == sf::Keyboard::K) keyreleasedLocal = 'K';
 
-                    if (keypressed != '\0') {
-                        game.triggerReceptorAnimation(keypressed == 'S' ? 1 : keypressed == 'D' ? 2 : keypressed == ' ' ? 3 : keypressed == 'J' ? 4 : 5);
-                        inputHandler.handleKeyPress(keypressed, currentTimeMs, game.getNotes(), game);
-                    }
+                if (keyreleasedLocal != '\0') {
+                    float gameplayTime = (currentState == GameState::PLAYING) ? Conductor::songPosition : currentTimeMs;
+                    inputHandler.handleKeyRelease(keyreleasedLocal, gameplayTime, game);
                 }
-                else if (event.type == sf::Event::KeyReleased) {
-                    char keyreleasedLocal = '\0';
-                    if (event.key.code == sf::Keyboard::S) keyreleasedLocal = 'S';
-                    else if (event.key.code == sf::Keyboard::D) keyreleasedLocal = 'D';
-                    else if (event.key.code == sf::Keyboard::Space) keyreleasedLocal = ' ';
-                    else if (event.key.code == sf::Keyboard::J) keyreleasedLocal = 'J';
-                    else if (event.key.code == sf::Keyboard::K) keyreleasedLocal = 'K';
+            }
 
-                    if (keyreleasedLocal != '\0') {
-                        inputHandler.handleKeyRelease(keyreleasedLocal, currentTimeMs, game);
+            if (event.type == sf::Event::MouseButtonPressed) {
+                if (event.mouseButton.button == sf::Mouse::Left) {
+                    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+                    if (currentState == GameState::MENU) {
+                        currentState = interface.handleMenuClick(mousePos);
+                    }
+                    else if (currentState == GameState::SONG_SELECT) {
+                        std::string selectedSong = interface.handleSongSelectClick(mousePos);
+                        if (!selectedSong.empty()) {
+                            game.loadNewSong(selectedSong);
+                            currentState = GameState::PLAYING;
+                        }
                     }
                 }
             }
@@ -117,7 +111,6 @@ int main() {
             scoreText.setPosition(620.f, 20.f);
             window.draw(scoreText);
 
-            // Gra skończy się dopiero wtedy, kiedy piosenka dobiegnie do końca na dysku
             if (currentState == GameState::PLAYING && game.isSongFinished()) {
                 int finalScore = inputHandler.getTotalScore();
                 std::cout << "\nKoniec utworu! Wynik: " << finalScore << std::endl;
