@@ -4,48 +4,45 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <vector>
-#include <memory>
 #include <string>
+#include <memory>
 #include "Note.h"
-
-struct Feedback {
-    std::string text;
-    sf::Color color;
-    float timer;
-    float x;
-    float y;
-};
+#include "NoteType.h" // Zawiera definicje NoteType1, NoteType2...
 
 class Game {
 public:
-    Game(const std::string& songFilename);//help me plz test zolwia cy czos
-    ~Game();
+    Game(const std::string& dummy);
+    ~Game() = default;
 
+    void loadNewSong(const std::string& filename);
+    void loadSongSequence(const std::string& filename);
     void update(float deltaTime, float currentTimeMs);
     void draw(sf::RenderWindow& window);
-
-    void loadSongSequence(const std::string& filename);
-    void loadNewSong(const std::string& filename);
+    bool isSongFinished() const;
 
     void triggerReceptorAnimation(int lane);
-    void addFeedback(int lane, const std::string& text, sf::Color color);
+    // Naprawa błędu z pliku InputHandler.cpp (3 parametry)
+    void addFeedback(int lane, const std::string& type, const sf::Color& color);
 
-    std::vector<std::unique_ptr<Note>>& getNotes() { return activeNotes; }
-    bool isSongFinished() const { return song.getStatus() == sf::SoundStream::Stopped; }
+    std::vector<std::unique_ptr<Note>>& getNotes() { return allNotes; }
+    std::vector<std::unique_ptr<Note>>& getActiveNotes() { return activeNotes; }
 
 private:
-    std::string currentSongFile;
-    sf::Font font;
-
     sf::Music song;
-
     std::vector<std::unique_ptr<Note>> allNotes;
     std::vector<std::unique_ptr<Note>> activeNotes;
-    std::vector<Feedback> feedbacks;
 
-    float receptorScales[5];
-    float laneHighlightEndTime[5];
+    struct FeedbackText {
+        sf::Text text;
+        float timer;
+        float y;
+    };
+    std::vector<FeedbackText> feedbacks;
+
     float lastUpdatedTime;
+    float receptorScales[6]; // Indeksy 1-5, więc rozmiar 6 jest bezpieczniejszy
+    sf::Font font;
+    sf::Text infoText;
 };
 
 #endif // GAME_H

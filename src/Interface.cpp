@@ -2,117 +2,135 @@
 #include <iostream>
 
 Interface::Interface() {
-    if (!font.loadFromFile("arial.ttf")) {
+    if (!font.loadFromFile("assets/arial.ttf")) {
         std::cerr << "[BLAD INTERFEJSU]: Nie znaleziono czcionki arial.ttf!\n";
     }
 
-    // --- INICJALIZACJA MENU GŁÓWNEGO ---
+    // --- INICJALIZACJA MENU GŁÓWNEGO ---\n";
     menuTitle.setFont(font);
     menuTitle.setString("AGH RHYTHM GAME");
     menuTitle.setCharacterSize(45);
     menuTitle.setFillColor(sf::Color::White);
-    menuTitle.setPosition(200.f, 200.f);
+    menuTitle.setPosition(220.f, 150.f);
 
     playButton.setFont(font);
     playButton.setString("1. GRAJ");
     playButton.setCharacterSize(35);
     playButton.setFillColor(sf::Color::Green);
-    playButton.setPosition(320.f, 450.f);
+    playButton.setPosition(320.f, 400.f);
+
+    scoreboardButton.setFont(font);
+    scoreboardButton.setString("2. WYNIKI");
+    scoreboardButton.setCharacterSize(35);
+    scoreboardButton.setFillColor(sf::Color::Yellow);
+    scoreboardButton.setPosition(320.f, 500.f);
 
     exitButton.setFont(font);
-    exitButton.setString("2. WYJDZ");
+    exitButton.setString("3. WYJDZ");
     exitButton.setCharacterSize(35);
     exitButton.setFillColor(sf::Color::Red);
-    exitButton.setPosition(320.f, 580.f);
+    exitButton.setPosition(320.f, 600.f);
 
-    // --- INICJALIZACJA WYBORU UTWORÓW ---
+    // --- INICJALIZACJA WYBORU UTWORÓW ---\n";
     selectTitle.setFont(font);
     selectTitle.setString("WYBIERZ UTWOR:");
     selectTitle.setCharacterSize(40);
-    selectTitle.setFillColor(sf::Color::Yellow);
-    selectTitle.setPosition(220.f, 100.f);
+    selectTitle.setFillColor(sf::Color::White);
+    selectTitle.setPosition(250.f, 100.f);
 
-    // Dokładne nazwy plików w Waszym folderze music_sequence
-    songFiles = {
-        "Lady Pank.txt",
-        "muzyka_test.txt",
-        "muzyka1.txt",
-        "muzyka2.txt",
-        "Utwór 2 level 1.txt",
-        "Utwór 2 level 2.txt"
-    };
-
-    // Automatyczne układanie przycisków na ekranie jeden pod drugim
-    float startY = 250.f;
+    songFiles = {"song1.txt", "song2.txt", "song3.txt"};
     for (size_t i = 0; i < songFiles.size(); ++i) {
-        sf::Text songText;
-        songText.setFont(font);
-
-        // Wyświetlamy ładną nazwę (usuwamy końcówkę .txt na ekranie)
-        std::string displayName = songFiles[i].substr(0, songFiles[i].find_last_of("."));
-        songText.setString(displayName);
-
-        songText.setCharacterSize(28);
-        songText.setFillColor(sf::Color::White);
-
-        // Wyśrodkowanie pozycji napisów na osi X
-        songText.setPosition(200.f, startY + (i * 70.f));
-
-        songButtons.push_back(songText);
+        sf::Text btn;
+        btn.setFont(font);
+        btn.setString(songFiles[i]);
+        btn.setCharacterSize(30);
+        btn.setFillColor(sf::Color::Cyan);
+        btn.setPosition(300.f, 250.f + (i * 70.f));
+        songButtons.push_back(btn);
     }
+
+    // Przycisk powrotu do użycia w podmenu
+    backButton.setFont(font);
+    backButton.setString("POWROT");
+    backButton.setCharacterSize(30);
+    backButton.setFillColor(sf::Color::White);
+    backButton.setPosition(50.f, 50.f);
 }
 
 void Interface::drawMenu(sf::RenderWindow& window) {
     window.draw(menuTitle);
     window.draw(playButton);
+    window.draw(scoreboardButton);
     window.draw(exitButton);
 }
 
 void Interface::drawSongSelect(sf::RenderWindow& window) {
     window.draw(selectTitle);
-    for (const auto& button : songButtons) {
-        window.draw(button);
+    for (const auto& btn : songButtons) {
+        window.draw(btn);
+    }
+}
+
+void Interface::drawEnterNickname(sf::RenderWindow& window, const std::string& currentNick) {
+    sf::Text titleText("UTWOR UKONCZONY!", font, 40);
+    titleText.setFillColor(sf::Color::Green);
+    titleText.setPosition(220.f, 300.f);
+
+    sf::Text inputInfo("WPISZ SWOJ NICK (3 LITERY):\n             " + currentNick, font, 30);
+    inputInfo.setFillColor(sf::Color::White);
+    inputInfo.setPosition(200.f, 420.f);
+
+    sf::Text subText("[Wcisnij ENTER aby zapisac]", font, 20);
+    subText.setFillColor(sf::Color::Yellow);
+    subText.setPosition(270.f, 550.f);
+
+    window.draw(titleText);
+    window.draw(inputInfo);
+    window.draw(subText);
+}
+
+void Interface::drawScoreboard(sf::RenderWindow& window, const ScoreManager& scoreManager) {
+    sf::Text title("NAJLEPSZE WYNIKI", font, 45);
+    title.setFillColor(sf::Color::Yellow);
+    title.setPosition(220.f, 120.f);
+    window.draw(title);
+    window.draw(backButton);
+
+    const auto& scores = scoreManager.getScores();
+    for (size_t i = 0; i < scores.size() && i < 10; ++i) {
+        sf::Text rowText(std::to_string(i + 1) + ".  " + scores[i].nickname + "    " + std::to_string(scores[i].score) + " pkt", font, 28);
+        rowText.setFillColor(sf::Color::White);
+        rowText.setPosition(280.f, 220.f + (i * 45.f));
+        window.draw(rowText);
+    }
+    if(scores.empty()) {
+        sf::Text emptyText("Brak zapisanych wynikow!", font, 24);
+        emptyText.setFillColor(sf::Color::Cyan);
+        emptyText.setPosition(270.f, 350.f);
+        window.draw(emptyText);
     }
 }
 
 GameState Interface::handleMenuClick(const sf::Vector2i& mousePos) {
     sf::Vector2f mousePosF(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y));
-
-    // Dynamiczne sprawdzenie czy kliknięto w obszar tekstu "GRAJ"
-    if (playButton.getGlobalBounds().contains(mousePosF)) {
-        std::cout << "[INTERFEJS]: Kliknieto przycisk GRAJ. Przejscie do wyboru piosenek.\n";
-        return GameState::SONG_SELECT;
-    }
-
-    // Sprawdzenie czy kliknięto w "WYJDZ"
-    if (exitButton.getGlobalBounds().contains(mousePosF)) {
-        std::cout << "[INTERFEJS]: Kliknieto WYJDZ.\n";
-        exit(0);
-    }
-
+    if (playButton.getGlobalBounds().contains(mousePosF)) return GameState::SONG_SELECT;
+    if (scoreboardButton.getGlobalBounds().contains(mousePosF)) return GameState::SCOREBOARD;
+    if (exitButton.getGlobalBounds().contains(mousePosF)) exit(0);
     return GameState::MENU;
 }
 
 std::string Interface::handleSongSelectClick(const sf::Vector2i& mousePos) {
     sf::Vector2f mousePosF(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y));
-
-    // Pętla sprawdza każdy wygenerowany przycisk piosenki
     for (size_t i = 0; i < songButtons.size(); ++i) {
-        // Pobieramy rzeczywiste granice tekstu na ekranie (pudełko kolizji)
-        sf::FloatRect bounds = songButtons[i].getGlobalBounds();
-
-        // Celowo powiększamy margines klikalności o 15 pikseli wokół napisu, żeby łatwiej było trafić myszką
-        bounds.left -= 15.f;
-        bounds.width += 30.f;
-        bounds.top -= 10.f;
-        bounds.height += 20.f;
-
-        if (bounds.contains(mousePosF)) {
-            std::cout << "[SUKCES INTERFEJSU]: Trafiono w przycisk utworu: " << songFiles[i] << "\n";
-            return songFiles[i]; // Zwraca pełną nazwę pliku z rozszerzeniem .txt
+        if (songButtons[i].getGlobalBounds().contains(mousePosF)) {
+            return songFiles[i];
         }
     }
-
-    std::cout << "[INTERFEJS]: Klikniecie poza przyciskami utworow (puste tlo).\n";
     return "";
+}
+
+GameState Interface::handleScoreboardClick(const sf::Vector2i& mousePos) {
+    sf::Vector2f mousePosF(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y));
+    if (backButton.getGlobalBounds().contains(mousePosF)) return GameState::MENU;
+    return GameState::SCOREBOARD;
 }

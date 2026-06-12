@@ -1,6 +1,6 @@
 CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj: \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\InputHandler.cpp \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\InputHandler.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\InputHandler.cpp \
+ C:\Users\User\Desktop\Nowy\ folder\src\InputHandler.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -116,7 +116,7 @@ CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/auto_ptr.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/execution_defs.h \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Note.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\Note.h \
  C:/SFML/include/SFML/Graphics.hpp C:/SFML/include/SFML/Window.hpp \
  C:/SFML/include/SFML/System.hpp C:/SFML/include/SFML/Config.hpp \
  C:/SFML/include/SFML/System/Clock.hpp \
@@ -259,7 +259,7 @@ CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj: \
  C:/SFML/include/SFML/Graphics/Sprite.hpp \
  C:/SFML/include/SFML/Graphics/Text.hpp \
  C:/SFML/include/SFML/Graphics/VertexBuffer.hpp \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Game.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\Game.h \
  C:/SFML/include/SFML/Audio.hpp \
  C:/SFML/include/SFML/Audio/InputSoundFile.hpp \
  C:/SFML/include/SFML/Audio/Export.hpp \
@@ -280,7 +280,8 @@ CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj: \
  C:/SFML/include/SFML/Audio/SoundFileFactory.inl \
  C:/SFML/include/SFML/Audio/SoundFileReader.hpp \
  C:/SFML/include/SFML/Audio/SoundFileWriter.hpp \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Conductor.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\NoteType.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\Conductor.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \

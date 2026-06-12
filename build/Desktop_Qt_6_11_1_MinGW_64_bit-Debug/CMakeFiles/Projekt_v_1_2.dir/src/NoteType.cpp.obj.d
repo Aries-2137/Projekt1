@@ -1,7 +1,7 @@
 CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj: \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\NoteType.cpp \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\NoteType.h \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Note.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\NoteType.cpp \
+ C:\Users\User\Desktop\Nowy\ folder\src\NoteType.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\Note.h \
  C:/SFML/include/SFML/Graphics.hpp C:/SFML/include/SFML/Window.hpp \
  C:/SFML/include/SFML/System.hpp C:/SFML/include/SFML/Config.hpp \
  C:/SFML/include/SFML/System/Clock.hpp \

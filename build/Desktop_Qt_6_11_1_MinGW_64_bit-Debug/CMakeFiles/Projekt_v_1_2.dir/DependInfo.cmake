@@ -8,14 +8,14 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt1/src/Game.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj.d"
-  "C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt1/src/InputHandler.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj.d"
-  "C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt1/src/Interface.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj.d"
-  "C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt1/src/Note.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj.d"
-  "C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt1/src/NoteType.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj.d"
-  "C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt1/src/ScoreManager.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj.d"
-  "C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt1/src/conductor.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj.d"
-  "C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt1/src/main.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj.d"
+  "C:/Users/User/Desktop/Nowy folder/src/Game.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj.d"
+  "C:/Users/User/Desktop/Nowy folder/src/InputHandler.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj.d"
+  "C:/Users/User/Desktop/Nowy folder/src/Interface.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj.d"
+  "C:/Users/User/Desktop/Nowy folder/src/Note.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj.d"
+  "C:/Users/User/Desktop/Nowy folder/src/NoteType.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj.d"
+  "C:/Users/User/Desktop/Nowy folder/src/ScoreManager.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj.d"
+  "C:/Users/User/Desktop/Nowy folder/src/conductor.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj.d"
+  "C:/Users/User/Desktop/Nowy folder/src/main.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

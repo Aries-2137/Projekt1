@@ -52,10 +52,10 @@ RM = C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1"
+CMAKE_SOURCE_DIR = "C:\Users\User\Desktop\Nowy folder"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug"
+CMAKE_BINARY_DIR = "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Projekt_v_1_2.dir/depend.make
@@ -70,123 +70,123 @@ include CMakeFiles/Projekt_v_1_2.dir/flags.make
 
 CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/flags.make
 CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/includes_CXX.rsp
-CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj: C:/Users/major/Desktop/AiR/Progamowanie\ obiektowe/Projekt1/src/main.cpp
+CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj: C:/Users/User/Desktop/Nowy\ folder/src/main.cpp
 CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\main.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\main.cpp.obj -c "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\main.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\main.cpp.obj -c "C:\Users\User\Desktop\Nowy folder\src\main.cpp"
 
 CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\main.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\main.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\User\Desktop\Nowy folder\src\main.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\main.cpp.i
 
 CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\main.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\main.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Desktop\Nowy folder\src\main.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\main.cpp.s
 
 CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/flags.make
 CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/includes_CXX.rsp
-CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj: C:/Users/major/Desktop/AiR/Progamowanie\ obiektowe/Projekt1/src/Game.cpp
+CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj: C:/Users/User/Desktop/Nowy\ folder/src/Game.cpp
 CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\Game.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\Game.cpp.obj -c "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\Game.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\Game.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\Game.cpp.obj -c "C:\Users\User\Desktop\Nowy folder\src\Game.cpp"
 
 CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\Game.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\Game.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\User\Desktop\Nowy folder\src\Game.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\Game.cpp.i
 
 CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\Game.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\Game.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Desktop\Nowy folder\src\Game.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\Game.cpp.s
 
 CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/flags.make
 CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/includes_CXX.rsp
-CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj: C:/Users/major/Desktop/AiR/Progamowanie\ obiektowe/Projekt1/src/Note.cpp
+CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj: C:/Users/User/Desktop/Nowy\ folder/src/Note.cpp
 CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\Note.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\Note.cpp.obj -c "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\Note.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\Note.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\Note.cpp.obj -c "C:\Users\User\Desktop\Nowy folder\src\Note.cpp"
 
 CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\Note.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\Note.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\User\Desktop\Nowy folder\src\Note.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\Note.cpp.i
 
 CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Projekt_v_1_2.dir/src/Note.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\Note.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\Note.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Desktop\Nowy folder\src\Note.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\Note.cpp.s
 
 CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/flags.make
 CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/includes_CXX.rsp
-CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj: C:/Users/major/Desktop/AiR/Progamowanie\ obiektowe/Projekt1/src/NoteType.cpp
+CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj: C:/Users/User/Desktop/Nowy\ folder/src/NoteType.cpp
 CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\NoteType.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\NoteType.cpp.obj -c "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\NoteType.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\NoteType.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\NoteType.cpp.obj -c "C:\Users\User\Desktop\Nowy folder\src\NoteType.cpp"
 
 CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\NoteType.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\NoteType.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\User\Desktop\Nowy folder\src\NoteType.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\NoteType.cpp.i
 
 CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Projekt_v_1_2.dir/src/NoteType.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\NoteType.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\NoteType.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Desktop\Nowy folder\src\NoteType.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\NoteType.cpp.s
 
 CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/flags.make
 CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/includes_CXX.rsp
-CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj: C:/Users/major/Desktop/AiR/Progamowanie\ obiektowe/Projekt1/src/ScoreManager.cpp
+CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj: C:/Users/User/Desktop/Nowy\ folder/src/ScoreManager.cpp
 CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\ScoreManager.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\ScoreManager.cpp.obj -c "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\ScoreManager.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\ScoreManager.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\ScoreManager.cpp.obj -c "C:\Users\User\Desktop\Nowy folder\src\ScoreManager.cpp"
 
 CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\ScoreManager.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\ScoreManager.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\User\Desktop\Nowy folder\src\ScoreManager.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\ScoreManager.cpp.i
 
 CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\ScoreManager.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\ScoreManager.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Desktop\Nowy folder\src\ScoreManager.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\ScoreManager.cpp.s
 
 CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/flags.make
 CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/includes_CXX.rsp
-CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj: C:/Users/major/Desktop/AiR/Progamowanie\ obiektowe/Projekt1/src/InputHandler.cpp
+CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj: C:/Users/User/Desktop/Nowy\ folder/src/InputHandler.cpp
 CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\InputHandler.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\InputHandler.cpp.obj -c "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\InputHandler.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\InputHandler.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\InputHandler.cpp.obj -c "C:\Users\User\Desktop\Nowy folder\src\InputHandler.cpp"
 
 CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\InputHandler.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\InputHandler.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\User\Desktop\Nowy folder\src\InputHandler.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\InputHandler.cpp.i
 
 CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\InputHandler.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\InputHandler.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Desktop\Nowy folder\src\InputHandler.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\InputHandler.cpp.s
 
 CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/flags.make
 CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/includes_CXX.rsp
-CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj: C:/Users/major/Desktop/AiR/Progamowanie\ obiektowe/Projekt1/src/Interface.cpp
+CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj: C:/Users/User/Desktop/Nowy\ folder/src/Interface.cpp
 CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\Interface.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\Interface.cpp.obj -c "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\Interface.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\Interface.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\Interface.cpp.obj -c "C:\Users\User\Desktop\Nowy folder\src\Interface.cpp"
 
 CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\Interface.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\Interface.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\User\Desktop\Nowy folder\src\Interface.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\Interface.cpp.i
 
 CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\Interface.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\Interface.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Desktop\Nowy folder\src\Interface.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\Interface.cpp.s
 
 CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/flags.make
 CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/includes_CXX.rsp
-CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj: C:/Users/major/Desktop/AiR/Progamowanie\ obiektowe/Projekt1/src/conductor.cpp
+CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj: C:/Users/User/Desktop/Nowy\ folder/src/conductor.cpp
 CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\conductor.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\conductor.cpp.obj -c "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\conductor.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\conductor.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\conductor.cpp.obj -c "C:\Users\User\Desktop\Nowy folder\src\conductor.cpp"
 
 CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.i"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\conductor.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\conductor.cpp.i
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\User\Desktop\Nowy folder\src\conductor.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\conductor.cpp.i
 
 CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.s"
-	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\src\conductor.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\conductor.cpp.s
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Desktop\Nowy folder\src\conductor.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\conductor.cpp.s
 
 # Object files for target Projekt_v_1_2
 Projekt_v_1_2_OBJECTS = \
@@ -218,10 +218,10 @@ Projekt_v_1_2.exe: C:/SFML/lib/libsfml-system-d.a
 Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/linkLibs.rsp
 Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/objects1.rsp
 Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Projekt_v_1_2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Projekt_v_1_2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Projekt_v_1_2.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Kopiowanie folderu assets do katalogu uruchomieniowego..."
-	C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy_directory "C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt1/assets" "C:/Users/major/Desktop/AiR/Progamowanie obiektowe/Projekt1/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/assets"
+	C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy_directory "C:/Users/User/Desktop/Nowy folder/assets" "C:/Users/User/Desktop/Nowy folder/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/assets"
 
 # Rule to build all files generated by this target.
 CMakeFiles/Projekt_v_1_2.dir/build: Projekt_v_1_2.exe
@@ -232,6 +232,6 @@ CMakeFiles/Projekt_v_1_2.dir/clean:
 .PHONY : CMakeFiles/Projekt_v_1_2.dir/clean
 
 CMakeFiles/Projekt_v_1_2.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1" "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1" "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug" "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug" "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles\Projekt_v_1_2.dir\DependInfo.cmake" "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\User\Desktop\Nowy folder" "C:\Users\User\Desktop\Nowy folder" "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug" "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug" "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles\Projekt_v_1_2.dir\DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/Projekt_v_1_2.dir/depend
 

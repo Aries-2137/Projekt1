@@ -1,6 +1,6 @@
 CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj: \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\conductor.cpp \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Conductor.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\conductor.cpp \
+ C:\Users\User\Desktop\Nowy\ folder\src\Conductor.h \
  C:/SFML/include/SFML/Audio.hpp C:/SFML/include/SFML/System.hpp \
  C:/SFML/include/SFML/Config.hpp C:/SFML/include/SFML/System/Clock.hpp \
  C:/SFML/include/SFML/System/Export.hpp \

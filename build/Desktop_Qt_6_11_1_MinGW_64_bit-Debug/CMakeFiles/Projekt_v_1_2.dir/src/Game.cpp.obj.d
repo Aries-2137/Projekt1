@@ -1,6 +1,6 @@
 CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj: \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Game.cpp \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Game.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\Game.cpp \
+ C:\Users\User\Desktop\Nowy\ folder\src\Game.h \
  C:/SFML/include/SFML/Graphics.hpp C:/SFML/include/SFML/Window.hpp \
  C:/SFML/include/SFML/System.hpp C:/SFML/include/SFML/Config.hpp \
  C:/SFML/include/SFML/System/Clock.hpp \
@@ -278,9 +278,9 @@ CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/atomic_lockfree_defines.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/auto_ptr.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Note.h \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\NoteType.h \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Conductor.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\Note.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\NoteType.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\Conductor.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \

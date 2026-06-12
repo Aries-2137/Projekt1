@@ -53,10 +53,10 @@ RM = C:\Qt\Tools\CMake_64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1"
+CMAKE_SOURCE_DIR = "C:\Users\User\Desktop\Nowy folder"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug"
+CMAKE_BINARY_DIR = "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -80,14 +80,14 @@ clean: CMakeFiles/Projekt_v_1_2.dir/clean
 CMakeFiles/Projekt_v_1_2.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9 "Built target Projekt_v_1_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9 "Built target Projekt_v_1_2"
 .PHONY : CMakeFiles/Projekt_v_1_2.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Projekt_v_1_2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" 9
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Projekt_v_1_2.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\major\Desktop\AiR\Progamowanie obiektowe\Projekt1\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" 0
 .PHONY : CMakeFiles/Projekt_v_1_2.dir/rule
 
 # Convenience name for target.

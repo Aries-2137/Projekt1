@@ -2,9 +2,14 @@
 #include <string>
 #include <vector>
 
+struct ScoreEntry {
+    std::string nickname;
+    int score;
+};
+
 class ScoreManager {
 private:
-    std::vector<int> highScores;
+    std::vector<ScoreEntry> highScores;
     std::string filename;
 
 public:
@@ -14,9 +19,12 @@ public:
     void loadScores();
     void saveScores();
 
-    // Dodanie nowego wyniku na koniec gry
-    void addScore(int score);
+    // Dodanie nowego wyniku wraz z pseudonimem na koniec gry
+    void addScore(const std::string& nickname, int score);
 
-    // Wyświetlenie tablicy
+    // Pobranie listy wyników (potrzebne do rysowania w interfejsie)
+    const std::vector<ScoreEntry>& getScores() const { return highScores; }
+
+    // Wyświetlenie tablicy w konsoli
     void displayScores() const;
 };

@@ -12,9 +12,11 @@ void ScoreManager::loadScores() {
     std::ifstream file(filename);
 
     if (file.is_open()) {
+        std::string nick;
         int score;
-        while (file >> score) {
-            highScores.push_back(score);
+        // Odczyt ze struktury pliku tekstowego: NICK WYNIK
+        while (file >> nick >> score) {
+            highScores.push_back({nick, score});
         }
         file.close();
     }
@@ -24,16 +26,22 @@ void ScoreManager::saveScores() {
     std::ofstream file(filename);
 
     if (file.is_open()) {
-        for (int score : highScores) {
-            file << score << "\n";
+        for (const auto& entry : highScores) {
+            file << entry.nickname << " " << entry.score << "\n";
         }
         file.close();
     }
 }
 
-void ScoreManager::addScore(int score) {
-    highScores.push_back(score);
-    std::sort(highScores.begin(), highScores.end(), std::greater<int>());
+void ScoreManager::addScore(const std::string& nickname, int score) {
+    highScores.push_back({nickname, score});
+
+    // Sortowanie malejące (od największego do najmniejszego)
+    std::sort(highScores.begin(), highScores.end(), [](const ScoreEntry& a, const ScoreEntry& b) {
+        return a.score > b.score;
+    });
+
+    // Ograniczenie tablicy do TOP 10 wyników
     if (highScores.size() > 10) {
         highScores.resize(10);
     }
@@ -43,6 +51,6 @@ void ScoreManager::addScore(int score) {
 void ScoreManager::displayScores() const {
     std::cout << "--- TABLICA WYNIKOW ---\n";
     for (size_t i = 0; i < highScores.size(); ++i) {
-        std::cout << i + 1 << ". " << highScores[i] << " pkt\n";
+        std::cout << i + 1 << ". " << highScores[i].nickname << " - " << highScores[i].score << " pkt\n";
     }
 }

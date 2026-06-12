@@ -1,12 +1,11 @@
 #include <iostream>
 #include <chrono>
-#include <filesystem>
 #include <SFML/Graphics.hpp>
 #include "Game.h"
 #include "InputHandler.h"
 #include "ScoreManager.h"
 #include "Interface.h"
-#include "Conductor.h" // <--- Dodano nagłówek Conductora
+#include "Conductor.h"
 
 int main() {
     std::cout << "--- Start Gry: AGH ---\n";
@@ -17,107 +16,120 @@ int main() {
     Interface interface;
 
     sf::Font font;
-    if (!font.loadFromFile("arial.ttf")) {
+    if (!font.loadFromFile("assets/arial.ttf")) {
         std::cerr << "Blad: Nie znaleziono czcionki arial.ttf!" << std::endl;
     }
 
+    std::string playerNick = "";
     GameState currentState = GameState::MENU;
-    scoreManager.displayScores();
 
-    sf::RenderWindow window(sf::VideoMode(800, 1000), "AGH");
+    sf::RenderWindow window(sf::VideoMode(800, 1000), "AGH Rhythm Game");
     window.setFramerateLimit(60);
 
-    auto startTime = std::chrono::high_resolution_clock::now();
-    auto previousTime = startTime;
+    auto previousTime = std::chrono::high_resolution_clock::now();
+    bool isSongFiredUp = false;
 
     while (window.isOpen()) {
         auto currentTime = std::chrono::high_resolution_clock::now();
-        std::chrono::duration<float> deltaTimeDuration = currentTime - previousTime;
-        float deltaTime = deltaTimeDuration.count();
+        float deltaTime = std::chrono::duration<float>(currentTime - previousTime).count();
         previousTime = currentTime;
-
-        std::chrono::duration<float, std::milli> elapsed = currentTime - startTime;
-        float currentTimeMs = elapsed.count();
 
         sf::Event event;
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
+            if (event.type == sf::Event::Closed) window.close();
 
-            // POPRAWKA: Przechwytywanie kliknięć klawiszy zsynchronizowane z muzyką
-            if (event.type == sf::Event::KeyPressed) {
-                char keyPressedLocal = '\0';
-                if (event.key.code == sf::Keyboard::S) keyPressedLocal = 'S';
-                else if (event.key.code == sf::Keyboard::D) keyPressedLocal = 'D';
-                else if (event.key.code == sf::Keyboard::Space) keyPressedLocal = ' ';
-                else if (event.key.code == sf::Keyboard::J) keyPressedLocal = 'J';
-                else if (event.key.code == sf::Keyboard::K) keyPressedLocal = 'K';
-
-                if (keyPressedLocal != '\0') {
-                    // Jeśli gramy, przekazujemy pozycję piosenki z Conductora, w menu zwykły czas aplikacji
-                    float gameplayTime = (currentState == GameState::PLAYING) ? Conductor::songPosition : currentTimeMs;
-                    inputHandler.handleKeyPress(keyPressedLocal, gameplayTime, game.getNotes(), game);
-                }
-            }
-
-            if (event.type == sf::Event::KeyReleased) {
-                char keyreleasedLocal = '\0';
-                if (event.key.code == sf::Keyboard::S) keyreleasedLocal = 'S';
-                else if (event.key.code == sf::Keyboard::D) keyreleasedLocal = 'D';
-                else if (event.key.code == sf::Keyboard::Space) keyreleasedLocal = ' ';
-                else if (event.key.code == sf::Keyboard::J) keyreleasedLocal = 'J';
-                else if (event.key.code == sf::Keyboard::K) keyreleasedLocal = 'K';
-
-                if (keyreleasedLocal != '\0') {
-                    float gameplayTime = (currentState == GameState::PLAYING) ? Conductor::songPosition : currentTimeMs;
-                    inputHandler.handleKeyRelease(keyreleasedLocal, gameplayTime, game);
-                }
-            }
-
-            if (event.type == sf::Event::MouseButtonPressed) {
-                if (event.mouseButton.button == sf::Mouse::Left) {
-                    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-                    if (currentState == GameState::MENU) {
-                        currentState = interface.handleMenuClick(mousePos);
+            // 1. WPISYWANIE NICKU
+            if (currentState == GameState::ENTER_NICKNAME) {
+                if (event.type == sf::Event::TextEntered) {
+                    if (event.text.unicode >= 32 && event.text.unicode < 128) {
+                        if (playerNick.size() < 3) {
+                            playerNick += std::toupper(static_cast<char>(event.text.unicode));
+                        }
                     }
-                    else if (currentState == GameState::SONG_SELECT) {
-                        std::string selectedSong = interface.handleSongSelectClick(mousePos);
-                        if (!selectedSong.empty()) {
-                            game.loadNewSong(selectedSong);
-                            currentState = GameState::PLAYING;
+                }
+                if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Enter) {
+                    if (playerNick.size() == 3) {
+                        scoreManager.addScore(playerNick, inputHandler.getTotalScore());
+                        playerNick = "";
+                        currentState = GameState::SCOREBOARD;
+                    }
+                }
+            }
+
+            // 2. KLAWIATURA W GRZE
+            if (currentState == GameState::PLAYING) {
+                if (event.type == sf::Event::KeyPressed || event.type == sf::Event::KeyReleased) {
+                    char key = '\0';
+                    if (event.key.code == sf::Keyboard::S) key = 'S';
+                    else if (event.key.code == sf::Keyboard::D) key = 'D';
+                    else if (event.key.code == sf::Keyboard::Space) key = ' ';
+                    else if (event.key.code == sf::Keyboard::J) key = 'J';
+                    else if (event.key.code == sf::Keyboard::K) key = 'K';
+
+                    if (key != '\0') {
+                        if (event.type == sf::Event::KeyPressed) {
+                            // POPRAWKA: Przekazujemy game.getActiveNotes() zamiast game.getNotes()
+                            inputHandler.handleKeyPress(key, Conductor::songPosition, game.getActiveNotes(), game);
+                        }
+                        else {
+                            inputHandler.handleKeyRelease(key, Conductor::songPosition, game);
                         }
                     }
                 }
             }
+
+            // 3. MYSZKA
+            if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+                sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+                if (currentState == GameState::MENU) {
+                    GameState nextState = interface.handleMenuClick(mousePos);
+
+                    if (nextState == GameState::SONG_SELECT || nextState == GameState::PLAYING) {
+                        inputHandler.resetCombo();
+
+                        // ZMIANA: Zmieniono nazwę pliku z song1.txt na muzyka1.txt
+                        game.loadNewSong("muzyka1.txt");
+
+                        isSongFiredUp = false;
+                        currentState = GameState::PLAYING;
+                    } else {
+                        currentState = nextState;
+                    }
+                }
+                else if (currentState == GameState::SCOREBOARD) {
+                    currentState = interface.handleScoreboardClick(mousePos);
+                }
+            }
         }
 
+        // --- RENDEROWANIE ---
         window.clear(sf::Color(30, 30, 30));
 
         if (currentState == GameState::MENU) {
             interface.drawMenu(window);
         }
-        else if (currentState == GameState::SONG_SELECT) {
-            interface.drawSongSelect(window);
+        else if (currentState == GameState::SCOREBOARD) {
+            interface.drawScoreboard(window, scoreManager);
+        }
+        else if (currentState == GameState::ENTER_NICKNAME) {
+            interface.drawEnterNickname(window, playerNick);
         }
         else if (currentState == GameState::PLAYING) {
-            game.update(deltaTime, currentTimeMs);
+            game.update(deltaTime, Conductor::songPosition);
             game.draw(window);
 
-            sf::Text scoreText;
-            scoreText.setFont(font);
-            scoreText.setString("Punkty: " + std::to_string(inputHandler.getTotalScore()));
-            scoreText.setCharacterSize(24);
+            sf::Text scoreText("Punkty: " + std::to_string(inputHandler.getTotalScore()), font, 24);
             scoreText.setFillColor(sf::Color::White);
             scoreText.setPosition(620.f, 20.f);
             window.draw(scoreText);
 
-            if (currentState == GameState::PLAYING && game.isSongFinished()) {
-                int finalScore = inputHandler.getTotalScore();
-                std::cout << "\nKoniec utworu! Wynik: " << finalScore << std::endl;
+            if (!game.isSongFinished()) {
+                isSongFiredUp = true;
+            }
 
-                game.loadNewSong("");
-                scoreManager.addScore(finalScore);
-                currentState = GameState::MENU;
+            if (isSongFiredUp && game.isSongFinished()) {
+                std::cout << "Koniec utworu! Wynik: " << inputHandler.getTotalScore() << std::endl;
+                currentState = GameState::ENTER_NICKNAME;
             }
         }
 

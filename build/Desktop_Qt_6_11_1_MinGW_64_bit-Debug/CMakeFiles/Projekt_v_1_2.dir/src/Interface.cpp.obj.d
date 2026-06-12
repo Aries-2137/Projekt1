@@ -1,6 +1,6 @@
 CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj: \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Interface.cpp \
- C:\Users\major\Desktop\AiR\Progamowanie\ obiektowe\Projekt1\src\Interface.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\Interface.cpp \
+ C:\Users\User\Desktop\Nowy\ folder\src\Interface.h \
  C:/SFML/include/SFML/Graphics.hpp C:/SFML/include/SFML/Window.hpp \
  C:/SFML/include/SFML/System.hpp C:/SFML/include/SFML/Config.hpp \
  C:/SFML/include/SFML/System/Clock.hpp \
@@ -245,6 +245,7 @@ CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj: \
  C:/SFML/include/SFML/Graphics/Sprite.hpp \
  C:/SFML/include/SFML/Graphics/Text.hpp \
  C:/SFML/include/SFML/Graphics/VertexBuffer.hpp \
+ C:\Users\User\Desktop\Nowy\ folder\src\ScoreManager.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc
