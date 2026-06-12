@@ -7,8 +7,8 @@
 #include <string>
 #include <memory>
 #include "Note.h"
-#include "NoteType.h" // Zawiera definicje NoteType1, NoteType2...
-#include "CloudModifier.h"
+#include "NoteType.h"
+#include "CloudModifier.h" // <-- DODANO
 
 class Game {
 public:
@@ -22,18 +22,18 @@ public:
     bool isSongFinished() const;
 
     void triggerReceptorAnimation(int lane);
-    // Naprawa błędu z pliku InputHandler.cpp (3 parametry)
     void addFeedback(int lane, const std::string& type, const sf::Color& color);
-    CloudModifier& getCloudModifier() { return cloudModifier; }
 
     std::vector<std::unique_ptr<Note>>& getNotes() { return allNotes; }
     std::vector<std::unique_ptr<Note>>& getActiveNotes() { return activeNotes; }
+
+    // NOWOŚĆ: Dostęp do modyfikatora chmur
+    CloudModifier& getCloudModifier() { return cloudModifier; }
 
 private:
     sf::Music song;
     std::vector<std::unique_ptr<Note>> allNotes;
     std::vector<std::unique_ptr<Note>> activeNotes;
-    CloudModifier cloudModifier;
 
     struct FeedbackText {
         sf::Text text;
@@ -43,9 +43,11 @@ private:
     std::vector<FeedbackText> feedbacks;
 
     float lastUpdatedTime;
-    float receptorScales[6]; // Indeksy 1-5, więc rozmiar 6 jest bezpieczniejszy
+    float receptorScales[6];
     sf::Font font;
     sf::Text infoText;
+
+    CloudModifier cloudModifier; // <-- DODANO
 };
 
 #endif // GAME_H

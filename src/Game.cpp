@@ -5,7 +5,6 @@
 #include <sstream>
 #include <algorithm>
 #include <cmath>
-#include "CloudModifier.h"
 
 Game::Game(const std::string& dummy) : lastUpdatedTime(0.0f) {
     if (!font.loadFromFile("assets/arial.ttf")) {
@@ -24,13 +23,10 @@ Game::Game(const std::string& dummy) : lastUpdatedTime(0.0f) {
 void Game::loadSongSequence(const std::string& filename) {
     if (filename.empty()) return;
 
-    // Bezpieczna ścieżka względna - zadziała na każdym komputerze
     std::string fullPath = "assets/music_sequence/" + filename;
-
     std::ifstream file(fullPath);
     if (!file.is_open()) {
         std::cerr << "[BLAD WERYFIKACJI]: Nie znaleziono pliku mapy (.txt) pod sciezka wzgledna: " << fullPath << std::endl;
-        std::cerr << "[WSKAZOWKA]: Upewnij sie, ze katalog roboczy (Working Directory) jest ustawiony na folder glowny projektu, zawierajacy folder 'assets'!\n";
         return;
     }
 
@@ -57,21 +53,11 @@ void Game::loadSongSequence(const std::string& filename) {
                     float defaultSpeed = 2.0f;
                     float defaultRotationSpeed = 50.0f;
 
-                    if (type == 1) {
-                        allNotes.push_back(std::make_unique<NoteType1>(lane, targetTime, defaultSpeed, defaultRotationSpeed));
-                    }
-                    else if (type == 2) {
-                        allNotes.push_back(std::make_unique<NoteType2>(lane, targetTime, defaultSpeed, defaultRotationSpeed));
-                    }
-                    else if (type == 3) {
-                        allNotes.push_back(std::make_unique<NoteType3>(lane, targetTime, defaultSpeed, defaultRotationSpeed));
-                    }
-                    else if (type == 4) {
-                        allNotes.push_back(std::make_unique<NoteType4>(lane, targetTime, defaultSpeed, defaultRotationSpeed));
-                    }
-                    else if (type == 5) {
-                        allNotes.push_back(std::make_unique<NoteType5>(lane, targetTime, defaultSpeed, defaultRotationSpeed));
-                    }
+                    if (type == 1) allNotes.push_back(std::make_unique<NoteType1>(lane, targetTime, defaultSpeed, defaultRotationSpeed));
+                    else if (type == 2) allNotes.push_back(std::make_unique<NoteType2>(lane, targetTime, defaultSpeed, defaultRotationSpeed));
+                    else if (type == 3) allNotes.push_back(std::make_unique<NoteType3>(lane, targetTime, defaultSpeed, defaultRotationSpeed));
+                    else if (type == 4) allNotes.push_back(std::make_unique<NoteType4>(lane, targetTime, defaultSpeed, defaultRotationSpeed));
+                    else if (type == 5) allNotes.push_back(std::make_unique<NoteType5>(lane, targetTime, defaultSpeed, defaultRotationSpeed));
                 }
             } catch (const std::exception& e) {
                 continue;
@@ -81,23 +67,18 @@ void Game::loadSongSequence(const std::string& filename) {
     file.close();
 
     std::string fullAudioPath = "assets/music_sequence/muzyka1.ogg";
-
     if (!song.openFromFile(fullAudioPath)) {
-        std::cerr << "[BLAD WERYFIKACJI]: Nie udalo sie otworzyc pliku dzwiekowego pod sciezka wzgledna: " << fullAudioPath << std::endl;
-        std::cerr << "[WSKAZOWKA]: Upewnij sie, ze plik 'muzyka1.ogg' znajduje sie w: Nowy folder/assets/music_sequence/\n";
+        std::cerr << "[BLAD WERYFIKACJI]: Nie udalo sie otworzyc pliku dzwiekowego\n";
         return;
     }
 
     Conductor::initialize(songBpm, 0.0f);
-    std::cout << "[WERYFIKACJA]: Sukces! Wczytano " << filename << " (" << allNotes.size() << " nut, BPM: " << songBpm << ")\n";
 }
 
 void Game::loadNewSong(const std::string& filename) {
     song.stop();
     if (filename.empty()) return;
-
     loadSongSequence(filename);
-
     if (song.getDuration().asMicroseconds() > 0) {
         song.play();
     }
@@ -109,7 +90,6 @@ void Game::triggerReceptorAnimation(int lane) {
     }
 }
 
-// Dopasowana implementacja addFeedback przyjmująca lane, tekst oraz kolor
 void Game::addFeedback(int lane, const std::string& type, const sf::Color& color) {
     FeedbackText fb;
     fb.text.setFont(font);
@@ -117,10 +97,8 @@ void Game::addFeedback(int lane, const std::string& type, const sf::Color& color
     fb.text.setCharacterSize(40);
     fb.text.setFillColor(color);
 
-    // Pozycjonowanie napisu nad receptorem danej ścieżki (zgodnie z getXForLane z NoteType.cpp)
     float xPos = 50.0f + (lane * 100.0f) - (fb.text.getGlobalBounds().width / 2.0f);
     fb.text.setPosition(xPos, 650.f);
-
     fb.timer = 0.4f;
     fb.y = 650.f;
 
@@ -134,21 +112,19 @@ void Game::update(float deltaTime, float currentTimeMs) {
 
     infoText.setString("BEAT: " + std::to_string(Conductor::currentBeat) + "  |  BPM: " + std::to_string(static_cast<int>(Conductor::bpm)));
 
-    // Aktualizacja pulsowania receptorów (indeksy 1-5 zgodne z Twoim InputHandlerem)
+    // DODANO: Aktualizacja chmur
+    cloudModifier.update(deltaTime);
+
     for (int i = 1; i <= 5; ++i) {
-        // Jeśli Conductor właśnie odpalił nowy beat, receptory lekko pulsują w tle
         if (Conductor::justTriggeredBeat && receptorScales[i] <= 1.0f) {
             receptorScales[i] = 1.1f;
         }
-
-        // Płynny powrót receptorów do podstawowego rozmiaru (1.0f)
         if (receptorScales[i] > 1.0f) {
-            receptorScales[i] -= 3.0f * deltaTime; // prędkość zanikania animacji kliknięcia
+            receptorScales[i] -= 3.0f * deltaTime;
             if (receptorScales[i] < 1.0f) receptorScales[i] = 1.0f;
         }
     }
 
-    // Przenoszenie nut z allNotes do activeNotes (1500ms przed ich czasem trafienia)
     auto it = allNotes.begin();
     while (it != allNotes.end()) {
         if (audioTimeMs >= static_cast<float>((*it)->getTargetTime()) - 1500.0f) {
@@ -159,39 +135,30 @@ void Game::update(float deltaTime, float currentTimeMs) {
         }
     }
 
-    // Aktualizacja pozycji aktywnych nut
     for (auto& note : activeNotes) {
         note->updateSynced(audioTimeMs);
     }
 
-    // Usuwanie nut, które spadły poniżej ekranu (MISS)
     activeNotes.erase(std::remove_if(activeNotes.begin(), activeNotes.end(),
                                      [](const std::unique_ptr<Note>& note) {
                                          return note->getY() > 1000.0f;
                                      }), activeNotes.end());
 
-    // Aktualizacja napisów Feedback (PERFECT, GOOD, MISS)
     for (auto fbIt = feedbacks.begin(); fbIt != feedbacks.end(); ) {
         fbIt->timer -= deltaTime;
-        fbIt->y -= 80.0f * deltaTime; // Unoszenie napisu do góry
+        fbIt->y -= 80.0f * deltaTime;
         fbIt->text.setPosition(fbIt->text.getPosition().x, fbIt->y);
         if (fbIt->timer <= 0.0f) fbIt = feedbacks.erase(fbIt);
         else ++fbIt;
     }
-    cloudModifier.update(deltaTime);
 }
 
 void Game::draw(sf::RenderWindow& window) {
-    // 1. RYSOWANIE PULSUJĄCYCH PIONOWYCH LINII (Siatka dla ścieżek 1-5)
-    // Wyliczamy przezroczystość linii na podstawie pozycji w beacie, aby płynnie pulsowały
     float beatProgress = Conductor::currentBeat - std::floor(Conductor::currentBeat);
     sf::Uint8 lineAlpha = static_cast<sf::Uint8>(40.0f + (1.0f - beatProgress) * 60.0f);
 
     for (int i = 1; i <= 5; ++i) {
-        // Środek ścieżki X wyliczony dokładnie tak, jak w Twoim NoteType.cpp
         float xPos = 50.0f + (i * 100.0f);
-
-        // Tworzymy pionową linię od góry do dołu ekranu
         sf::Vertex line[] = {
             sf::Vertex(sf::Vector2f(xPos, 0.f), sf::Color(100, 100, 100, lineAlpha)),
             sf::Vertex(sf::Vector2f(xPos, 1000.f), sf::Color(100, 100, 100, lineAlpha))
@@ -199,18 +166,15 @@ void Game::draw(sf::RenderWindow& window) {
         window.draw(line, 2, sf::Lines);
     }
 
-    // 2. RYSOWANIE RECEPTORÓW (Względne miejsce kliknięcia na osi Y = 750.0f)
     for (int i = 1; i <= 5; ++i) {
         float xPos = 50.0f + (i * 100.0f);
-        float yPos = 750.0f; // Punkt zero dla Twoich nut z Note::updateSynced
+        float yPos = 750.0f;
 
-        // Baza receptora (szary, półprzezroczysty okrąg o promieniu zgodnym z nutami = 25px)
         sf::CircleShape receptor(25.0f);
         receptor.setOrigin(25.0f, 25.0f);
         receptor.setPosition(xPos, yPos);
         receptor.setFillColor(sf::Color(50, 50, 50, 150));
 
-        // Obwódka receptora w kolorze odpowiadającym danej ścieżce
         sf::Color laneColor;
         if (i == 1) laneColor = sf::Color::Green;
         else if (i == 2) laneColor = sf::Color::Red;
@@ -220,26 +184,17 @@ void Game::draw(sf::RenderWindow& window) {
 
         receptor.setOutlineThickness(2.0f);
         receptor.setOutlineColor(laneColor);
-
-        // Zastosowanie skali pulsowania/kliknięcia z tablicy receptorScales
         receptor.setScale(receptorScales[i], receptorScales[i]);
-
         window.draw(receptor);
     }
 
-    // 3. RYSOWANIE NUT (Muszą być rysowane nad liniami i receptorami!)
     for (auto& note : activeNotes) {
         note->draw(window);
     }
+
+    // DODANO: Rysowanie chmur NAD nutami, ale POD tekstami interfejsu
     cloudModifier.draw(window);
 
-    // 3. Rysowanie tekstów interfejsu (wynik, napisy PERFECT/MISS itp.)
-    window.draw(infoText);
-    for (const auto& fb : feedbacks) {
-        window.draw(fb.text);
-    }
-
-    // 4. RYSOWANIE TEKSTÓW INTERFEJSU I FEEDBACKU
     window.draw(infoText);
     for (const auto& fb : feedbacks) {
         window.draw(fb.text);

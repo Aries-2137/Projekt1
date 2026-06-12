@@ -6,19 +6,18 @@
 
 CloudModifier::CloudModifier() :
     active(false), spawnTimer(0.0f), maxSpawnTime(2.5f),
-    isDraggingSlider(false), sliderValue(0.5f)
+    isDraggingSlider(false), sliderValue(0.5f) // Domyślnie suwak na środku
 {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
-    // --- NOWE WSPÓŁRZĘDNE: PRAWY DOLNY RÓG ---
-    // Bazowe pozycje dla wyrównania elementów
+    // Punkty odniesienia dla prawego dolnego rogu (lekko przesunięte w dół)
     float baseX = 520.f;
-    float baseY = 460.f;
+    float baseY = 485.f;
 
     // 1. Konfiguracja kwadratowego przycisku włącznika
     toggleButton.setSize(sf::Vector2f(30.f, 30.f));
     toggleButton.setPosition(baseX, baseY);
-    toggleButton.setFillColor(sf::Color::Red);
+    toggleButton.setFillColor(sf::Color::Red); // Domyślnie wyłączone (czerwony)
     toggleButton.setOutlineThickness(2.f);
     toggleButton.setOutlineColor(sf::Color::White);
 
@@ -26,7 +25,7 @@ CloudModifier::CloudModifier() :
         // 2. Tekst obok włącznika
         buttonText.setFont(font);
         buttonText.setString("Utrudnienie (Chmury)");
-        buttonText.setCharacterSize(18); // Lekko zmniejszony font, by idealnie pasował do rogu
+        buttonText.setCharacterSize(18);
         buttonText.setFillColor(sf::Color::White);
         buttonText.setPosition(baseX + 40.f, baseY + 3.f);
 
@@ -35,28 +34,28 @@ CloudModifier::CloudModifier() :
         sliderText.setString("Intensywnosc chmur:");
         sliderText.setCharacterSize(16);
         sliderText.setFillColor(sf::Color::White);
-        sliderText.setPosition(baseX, baseY + 50.f);
+        sliderText.setPosition(baseX, baseY + 45.f);
     }
 
-    // 4. Tor suwaka (szerokość dopasowana do prawego boku ekranu: 200px)
+    // 4. Tor suwaka (szerokość 200px)
     sliderTrack.setSize(sf::Vector2f(200.f, 6.f));
-    sliderTrack.setPosition(baseX, baseY + 85.f);
+    sliderTrack.setPosition(baseX, baseY + 75.f);
     sliderTrack.setFillColor(sf::Color(100, 100, 100));
 
-    // 5. Uchwyt suwaka (kropka)
+    // 5. Uchwyt suwaka (cyjanowa kropka)
     sliderHandle.setRadius(10.f);
     sliderHandle.setOrigin(10.f, 10.f);
 
-    // Obliczamy pozycję początkową kropki na bazie sliderValue (0.5f) na nowym torze
+    // Obliczanie początkowej pozycji na osi X dla wartości 0.5f
     float initialHandleX = baseX + (sliderTrack.getSize().x * sliderValue);
-    sliderHandle.setPosition(initialHandleX, baseY + 88.f);
+    sliderHandle.setPosition(initialHandleX, baseY + 78.f);
     sliderHandle.setFillColor(sf::Color::Cyan);
 }
 
 void CloudModifier::toggle() {
     active = !active;
     toggleButton.setFillColor(active ? sf::Color::Green : sf::Color::Red);
-    if (!active) clouds.clear();
+    if (!active) clouds.clear(); // Czyści chmury natychmiast po wyłączeniu
 }
 
 void CloudModifier::setActive(bool state) {
@@ -70,42 +69,42 @@ bool CloudModifier::isActive() const {
 }
 
 void CloudModifier::handleMouseClick(const sf::Vector2i& mousePos) {
-    // 1. Sprawdzenie kliknięcia w kwadrat
+    // Sprawdzenie kliknięcia we włącznik (kwadrat)
     sf::FloatRect buttonBounds = toggleButton.getGlobalBounds();
     if (buttonBounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
         toggle();
         return;
     }
 
-    // 2. NOWOŚĆ: Sprawdzenie kliknięcia w uchwyt suwaka
+    // Sprawdzenie kliknięcia w kropkę suwaka
     sf::FloatRect handleBounds = sliderHandle.getGlobalBounds();
     if (handleBounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y))) {
         isDraggingSlider = true;
     }
 }
 
-// NOWOŚĆ: Puszczenie przycisku myszy przerywa przeciąganie
 void CloudModifier::handleMouseRelease() {
     isDraggingSlider = false;
 }
 
-// NOWOŚĆ: Aktualizacja pozycji suwaka podczas ruchu myszką
 void CloudModifier::handleMouseMove(const sf::Vector2i& mousePos) {
     if (!isDraggingSlider) return;
 
     float minX = sliderTrack.getPosition().x;
     float maxX = minX + sliderTrack.getSize().x;
 
-    // Ograniczamy ruch uchwytu do granic toru suwaka
+    // Ograniczenie ruchu kropki do szerokości paska suwaka
     float currentX = std::max(minX, std::min(static_cast<float>(mousePos.x), maxX));
     sliderHandle.setPosition(currentX, sliderHandle.getPosition().y);
 
-    // Wyliczamy wartość od 0.0f do 1.0f
+    // Przeliczenie pozycji X na wartość z przedziału od 0.0f do 1.0f
     sliderValue = (currentX - minX) / sliderTrack.getSize().x;
 }
 
 void CloudModifier::spawnCloud() {
     Cloud newCloud;
+
+    // Proceduralne rysowanie chmurki z 6 wierzchołków (nie wymaga tekstur .png)
     newCloud.shape.setPointCount(6);
     newCloud.shape.setPoint(0, sf::Vector2f(0.f, 40.f));
     newCloud.shape.setPoint(1, sf::Vector2f(30.f, 15.f));
@@ -114,18 +113,18 @@ void CloudModifier::spawnCloud() {
     newCloud.shape.setPoint(4, sf::Vector2f(140.f, 45.f));
     newCloud.shape.setPoint(5, sf::Vector2f(70.f, 60.f));
 
+    // Lekko półprzezroczysty biało-szary kolor
     newCloud.shape.setFillColor(sf::Color(240, 240, 245, 210));
-    newCloud.xPos = -160.f;
+    newCloud.xPos = -160.f; // Spawnuje się tuż za lewą krawędzią
 
-    // --- POPRAWKA: ROZSZERZENIE ZAKRESU W DÓŁ ---
-    // Zmieniamy z % 300 + 80 (zakres 80-380) na % 400 + 80 (zakres 80-480)
-    // Chmury mogą teraz latać o 100 pikseli niżej niż do tej pory!
+    // ROZSZERZONY ZAKRES W DÓŁ: Chmury latają w przedziale Y: 80 do 480 (środek ekranu)
     newCloud.yPos = static_cast<float>(std::rand() % 400 + 80);
 
-    // Obliczanie prędkości na podstawie suwaka (bez zmian)
+    // Prędkość modyfikowana suwakiem (od 1.0x do 2.5x bazowej prędkości)
     float speedMultiplier = 1.0f + (sliderValue * 1.5f);
     newCloud.speed = static_cast<float>(std::rand() % 80 + 60) * speedMultiplier;
 
+    // Losowa skala wielkości chmury
     newCloud.scale = static_cast<float>(std::rand() % 10 + 10) / 10.0f;
     newCloud.shape.setScale(newCloud.scale, newCloud.scale);
 
@@ -135,9 +134,9 @@ void CloudModifier::spawnCloud() {
 void CloudModifier::update(float deltaTime) {
     if (!active) return;
 
-    // MODYFIKACJA: Suwak wpływa na częstotliwość spawnu chmur
-    // Jeśli suwak = 0.0f, chmura pojawia się co 3.5 sekundy (łatwo)
-    // Jeśli suwak = 1.0f, chmura pojawia się co 0.8 sekundy (trudno, gęsto)
+    // Częstotliwość spawnu modyfikowana suwakiem:
+    // sliderValue = 0.0f -> spawn co 3.5s (rzadko)
+    // sliderValue = 1.0f -> spawn co 0.8s (bardzo gęsto)
     float currentMaxSpawnTime = 3.5f - (sliderValue * 2.7f);
 
     spawnTimer += deltaTime;
@@ -146,10 +145,12 @@ void CloudModifier::update(float deltaTime) {
         spawnCloud();
     }
 
+    // Ruch chmur w prawo
     for (auto it = clouds.begin(); it != clouds.end(); ) {
         it->xPos += it->speed * deltaTime;
         it->shape.setPosition(it->xPos, it->yPos);
 
+        // Usuwanie, kiedy chmura wyleci całkowicie za prawą krawędź (szerokość okna = 800)
         if (it->xPos > 850.f) {
             it = clouds.erase(it);
         } else {
@@ -158,6 +159,7 @@ void CloudModifier::update(float deltaTime) {
     }
 }
 
+// Rysowanie samych chmur podczas rozgrywki (PLAYING)
 void CloudModifier::draw(sf::RenderWindow& window) {
     if (active) {
         for (const auto& cloud : clouds) {
@@ -166,12 +168,10 @@ void CloudModifier::draw(sf::RenderWindow& window) {
     }
 }
 
-// Rysowanie pełnego panelu sterowania w menu głównym
+// Rysowanie całego interaktywnego panelu kontrolnego w menu głównym (MENU)
 void CloudModifier::drawButton(sf::RenderWindow& window) {
     window.draw(toggleButton);
     window.draw(buttonText);
-
-    // Rysowanie suwaka
     window.draw(sliderText);
     window.draw(sliderTrack);
     window.draw(sliderHandle);

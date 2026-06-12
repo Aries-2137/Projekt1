@@ -26,7 +26,6 @@ add_executable(Projekt_v_1_2
     src/conductor.h 
     src/conductor.cpp
     src/CloudModifier.h src/CloudModifier.cpp
-
 )
 
 target_link_libraries(Projekt_v_1_2 PRIVATE sfml-graphics sfml-window sfml-system sfml-audio)
