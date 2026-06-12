@@ -281,6 +281,7 @@ CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj: \
  C:/SFML/include/SFML/Audio/SoundFileReader.hpp \
  C:/SFML/include/SFML/Audio/SoundFileWriter.hpp \
  C:\Users\User\Desktop\Nowy\ folder\src\NoteType.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\CloudModifier.h \
  C:\Users\User\Desktop\Nowy\ folder\src\Conductor.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \

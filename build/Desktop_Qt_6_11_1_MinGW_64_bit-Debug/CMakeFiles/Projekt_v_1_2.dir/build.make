@@ -188,6 +188,21 @@ CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Desktop\Nowy folder\src\conductor.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\conductor.cpp.s
 
+CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/flags.make
+CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/includes_CXX.rsp
+CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj: C:/Users/User/Desktop/Nowy\ folder/src/CloudModifier.cpp
+CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj: CMakeFiles/Projekt_v_1_2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj -MF CMakeFiles\Projekt_v_1_2.dir\src\CloudModifier.cpp.obj.d -o CMakeFiles\Projekt_v_1_2.dir\src\CloudModifier.cpp.obj -c "C:\Users\User\Desktop\Nowy folder\src\CloudModifier.cpp"
+
+CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\User\Desktop\Nowy folder\src\CloudModifier.cpp" > CMakeFiles\Projekt_v_1_2.dir\src\CloudModifier.cpp.i
+
+CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\User\Desktop\Nowy folder\src\CloudModifier.cpp" -o CMakeFiles\Projekt_v_1_2.dir\src\CloudModifier.cpp.s
+
 # Object files for target Projekt_v_1_2
 Projekt_v_1_2_OBJECTS = \
 "CMakeFiles/Projekt_v_1_2.dir/src/main.cpp.obj" \
@@ -197,7 +212,8 @@ Projekt_v_1_2_OBJECTS = \
 "CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj" \
 "CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj" \
 "CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj" \
-"CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj"
+"CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj" \
+"CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj"
 
 # External object files for target Projekt_v_1_2
 Projekt_v_1_2_EXTERNAL_OBJECTS =
@@ -210,6 +226,7 @@ Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/src/ScoreManager.cpp.obj
 Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj
 Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj
 Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/src/conductor.cpp.obj
+Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj
 Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/build.make
 Projekt_v_1_2.exe: C:/SFML/lib/libsfml-graphics-d.a
 Projekt_v_1_2.exe: C:/SFML/lib/libsfml-window-d.a
@@ -218,7 +235,7 @@ Projekt_v_1_2.exe: C:/SFML/lib/libsfml-system-d.a
 Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/linkLibs.rsp
 Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/objects1.rsp
 Projekt_v_1_2.exe: CMakeFiles/Projekt_v_1_2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Projekt_v_1_2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\User\Desktop\Nowy folder\build\Desktop_Qt_6_11_1_MinGW_64_bit-Debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Projekt_v_1_2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Projekt_v_1_2.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Kopiowanie folderu assets do katalogu uruchomieniowego..."
 	C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy_directory "C:/Users/User/Desktop/Nowy folder/assets" "C:/Users/User/Desktop/Nowy folder/build/Desktop_Qt_6_11_1_MinGW_64_bit-Debug/assets"

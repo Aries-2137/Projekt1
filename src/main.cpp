@@ -6,11 +6,13 @@
 #include "ScoreManager.h"
 #include "Interface.h"
 #include "Conductor.h"
+#include "CloudModifier.h"
 
 int main() {
     std::cout << "--- Start Gry: AGH ---\n";
 
     Game game("");
+    CloudModifier cloudModifier;
     ScoreManager scoreManager("scores.dat");
     InputHandler inputHandler;
     Interface interface;
@@ -81,15 +83,14 @@ int main() {
             // 3. MYSZKA
             if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
                 sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-                if (currentState == GameState::MENU) {
-                    GameState nextState = interface.handleMenuClick(mousePos);
 
+                if (currentState == GameState::MENU) {
+                    game.getCloudModifier().handleMouseClick(mousePos);
+
+                    GameState nextState = interface.handleMenuClick(mousePos);
                     if (nextState == GameState::SONG_SELECT || nextState == GameState::PLAYING) {
                         inputHandler.resetCombo();
-
-                        // ZMIANA: Zmieniono nazwę pliku z song1.txt na muzyka1.txt
                         game.loadNewSong("muzyka1.txt");
-
                         isSongFiredUp = false;
                         currentState = GameState::PLAYING;
                     } else {
@@ -100,13 +101,28 @@ int main() {
                     currentState = interface.handleScoreboardClick(mousePos);
                 }
             }
+            else if (event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left) {
+                if (currentState == GameState::MENU) {
+                    game.getCloudModifier().handleMouseRelease();
+                }
+            }
+
+            // Ruch myszką (PRZESUWANIE SUWAKA W CZASIE RZECZYWISTYM)
+            else if (event.type == sf::Event::MouseMoved) {
+                if (currentState == GameState::MENU) {
+                    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+                    game.getCloudModifier().handleMouseMove(mousePos);
+                }
+            }
         }
 
+        // --- RENDEROWANIE ---
         // --- RENDEROWANIE ---
         window.clear(sf::Color(30, 30, 30));
 
         if (currentState == GameState::MENU) {
             interface.drawMenu(window);
+            game.getCloudModifier().drawButton(window); // <-- TUTAJ: Rysujemy sam przycisk w menu głównym
         }
         else if (currentState == GameState::SCOREBOARD) {
             interface.drawScoreboard(window, scoreManager);
@@ -116,8 +132,12 @@ int main() {
         }
         else if (currentState == GameState::PLAYING) {
             game.update(deltaTime, Conductor::songPosition);
-            game.draw(window);
+            cloudModifier.update(deltaTime); // Aktualizacja fizyki chmur
 
+            game.draw(window);
+            cloudModifier.draw(window); // <-- TUTAJ: Rysujemy chmury nad nutami (bez przycisku)
+
+            // Rysowanie punktacji
             sf::Text scoreText("Punkty: " + std::to_string(inputHandler.getTotalScore()), font, 24);
             scoreText.setFillColor(sf::Color::White);
             scoreText.setPosition(620.f, 20.f);

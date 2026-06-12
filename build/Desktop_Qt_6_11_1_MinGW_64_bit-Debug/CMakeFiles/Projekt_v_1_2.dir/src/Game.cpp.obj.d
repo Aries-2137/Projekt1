@@ -280,6 +280,7 @@ CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj: \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_memory_defs.h \
  C:\Users\User\Desktop\Nowy\ folder\src\Note.h \
  C:\Users\User\Desktop\Nowy\ folder\src\NoteType.h \
+ C:\Users\User\Desktop\Nowy\ folder\src\CloudModifier.h \
  C:\Users\User\Desktop\Nowy\ folder\src\Conductor.h \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
  C:/Qt/Tools/mingw1310_64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \

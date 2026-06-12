@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj"
+  "CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj.d"
   "CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj"
   "CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj.d"
   "CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj"

@@ -173,6 +173,30 @@ Projekt_v_1_2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/build
 .PHONY : Projekt_v_1_2/fast
 
+src/CloudModifier.obj: src/CloudModifier.cpp.obj
+.PHONY : src/CloudModifier.obj
+
+# target to build an object file
+src/CloudModifier.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj
+.PHONY : src/CloudModifier.cpp.obj
+
+src/CloudModifier.i: src/CloudModifier.cpp.i
+.PHONY : src/CloudModifier.i
+
+# target to preprocess a source file
+src/CloudModifier.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.i
+.PHONY : src/CloudModifier.cpp.i
+
+src/CloudModifier.s: src/CloudModifier.cpp.s
+.PHONY : src/CloudModifier.s
+
+# target to generate assembly for a file
+src/CloudModifier.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projekt_v_1_2.dir\build.make CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.s
+.PHONY : src/CloudModifier.cpp.s
+
 src/Game.obj: src/Game.cpp.obj
 .PHONY : src/Game.obj
 
@@ -378,6 +402,9 @@ help:
 	@echo ... list_install_components
 	@echo ... rebuild_cache
 	@echo ... Projekt_v_1_2
+	@echo ... src/CloudModifier.obj
+	@echo ... src/CloudModifier.i
+	@echo ... src/CloudModifier.s
 	@echo ... src/Game.obj
 	@echo ... src/Game.i
 	@echo ... src/Game.s

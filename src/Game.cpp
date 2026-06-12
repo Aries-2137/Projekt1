@@ -5,6 +5,7 @@
 #include <sstream>
 #include <algorithm>
 #include <cmath>
+#include "CloudModifier.h"
 
 Game::Game(const std::string& dummy) : lastUpdatedTime(0.0f) {
     if (!font.loadFromFile("assets/arial.ttf")) {
@@ -177,6 +178,7 @@ void Game::update(float deltaTime, float currentTimeMs) {
         if (fbIt->timer <= 0.0f) fbIt = feedbacks.erase(fbIt);
         else ++fbIt;
     }
+    cloudModifier.update(deltaTime);
 }
 
 void Game::draw(sf::RenderWindow& window) {
@@ -228,6 +230,13 @@ void Game::draw(sf::RenderWindow& window) {
     // 3. RYSOWANIE NUT (Muszą być rysowane nad liniami i receptorami!)
     for (auto& note : activeNotes) {
         note->draw(window);
+    }
+    cloudModifier.draw(window);
+
+    // 3. Rysowanie tekstów interfejsu (wynik, napisy PERFECT/MISS itp.)
+    window.draw(infoText);
+    for (const auto& fb : feedbacks) {
+        window.draw(fb.text);
     }
 
     // 4. RYSOWANIE TEKSTÓW INTERFEJSU I FEEDBACKU

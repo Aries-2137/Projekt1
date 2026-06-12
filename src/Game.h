@@ -8,6 +8,7 @@
 #include <memory>
 #include "Note.h"
 #include "NoteType.h" // Zawiera definicje NoteType1, NoteType2...
+#include "CloudModifier.h"
 
 class Game {
 public:
@@ -23,6 +24,7 @@ public:
     void triggerReceptorAnimation(int lane);
     // Naprawa błędu z pliku InputHandler.cpp (3 parametry)
     void addFeedback(int lane, const std::string& type, const sf::Color& color);
+    CloudModifier& getCloudModifier() { return cloudModifier; }
 
     std::vector<std::unique_ptr<Note>>& getNotes() { return allNotes; }
     std::vector<std::unique_ptr<Note>>& getActiveNotes() { return activeNotes; }
@@ -31,6 +33,7 @@ private:
     sf::Music song;
     std::vector<std::unique_ptr<Note>> allNotes;
     std::vector<std::unique_ptr<Note>> activeNotes;
+    CloudModifier cloudModifier;
 
     struct FeedbackText {
         sf::Text text;

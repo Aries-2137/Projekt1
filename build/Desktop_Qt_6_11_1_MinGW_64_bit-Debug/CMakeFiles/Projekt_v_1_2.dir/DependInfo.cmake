@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/User/Desktop/Nowy folder/src/CloudModifier.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/CloudModifier.cpp.obj.d"
   "C:/Users/User/Desktop/Nowy folder/src/Game.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/Game.cpp.obj.d"
   "C:/Users/User/Desktop/Nowy folder/src/InputHandler.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/InputHandler.cpp.obj.d"
   "C:/Users/User/Desktop/Nowy folder/src/Interface.cpp" "CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj" "gcc" "CMakeFiles/Projekt_v_1_2.dir/src/Interface.cpp.obj.d"
