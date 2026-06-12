@@ -27,7 +27,7 @@ private:
     sf::CircleShape sliderHandle;    // Uchwyt/Kropka do przesuwania
     sf::Text sliderText;             // Napis informacyjny
     bool isDraggingSlider;           // Czy gracz aktualnie przeciąga suwak myszką
-    float sliderValue;               // Wartość suwaka od 0.0f (łatwo) do 1.0f (trudno)
+    float sliderValue;               // Wartość suwaka od 0.0f (łatwo) do 1.0f (trudno) tzreba będzie bardziej zedytować bo dalej za proste
 
     void spawnCloud();
 
