@@ -19,6 +19,17 @@ void InputHandler::handleKeyPress(char key, float currentTimeMs, std::vector<std
     int targetLane = -1;
     key = std::toupper(key);
 
+
+    if (key == 'P') {
+        game.togglePause();
+        return;
+    }
+
+    if (game.getIsPaused()) return;
+    
+
+
+
     if (key == 'S') targetLane = 1;
     else if (key == 'D') targetLane = 2;
     else if (key == ' ') targetLane = 3;

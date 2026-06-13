@@ -20,6 +20,8 @@ public:
     void update(float deltaTime, float currentTimeMs);
     void draw(sf::RenderWindow& window);
     bool isSongFinished() const;
+    void togglePause(); //do pauzy
+    bool getIsPaused() const { return isPaused; } //zeby nie mozna bylo naciskac przyciskow
 
     void triggerReceptorAnimation(int lane);
     void addFeedback(int lane, const std::string& type, const sf::Color& color);
@@ -29,6 +31,7 @@ public:
 
     // NOWOŚĆ: Dostęp do modyfikatora chmur
     CloudModifier& getCloudModifier() { return cloudModifier; }
+
 
 private:
     sf::Music song;
@@ -46,6 +49,8 @@ private:
     float receptorScales[6];
     sf::Font font;
     sf::Text infoText;
+    bool isPaused; //do pauzy
+    sf::Text pauseText; //do pauzy
 
     CloudModifier cloudModifier; // <-- DODANO
 };

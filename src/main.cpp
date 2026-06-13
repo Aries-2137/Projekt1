@@ -65,6 +65,7 @@ int main() {
                     else if (event.key.code == sf::Keyboard::Space) key = ' ';
                     else if (event.key.code == sf::Keyboard::J) key = 'J';
                     else if (event.key.code == sf::Keyboard::K) key = 'K';
+                    else if (event.key.code == sf::Keyboard::P) key = 'P';
 
                     if (key != '\0') {
                         if (event.type == sf::Event::KeyPressed) {

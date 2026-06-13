@@ -10,10 +10,26 @@ Game::Game(const std::string& dummy) : lastUpdatedTime(0.0f) {
     if (!font.loadFromFile("assets/arial.ttf")) {
         std::cerr << "[BLAD GRY]: Nie znaleziono czcionki arial.ttf!\n";
     }
+
+    isPaused = false;
+
+    pauseText.setFont(font);
+    pauseText.setString("PAUZA");
+    pauseText.setCharacterSize(60);
+    pauseText.setFillColor(sf::Color::Red);
+    pauseText.setOutlineThickness(3.0f);
+    pauseText.setOutlineColor(sf::Color::Black);
+
+    sf::FloatRect pRect = pauseText.getLocalBounds();
+    pauseText.setOrigin(pRect.left + pRect.width / 2.0f, pRect.top + pRect.height / 2.0f);
+    pauseText.setPosition(400.0f, 400.0f);
+
     infoText.setFont(font);
     infoText.setCharacterSize(24);
     infoText.setFillColor(sf::Color::White);
     infoText.setPosition(20.f, 20.f);
+
+
 
     for (int i = 0; i < 6; ++i) {
         receptorScales[i] = 1.0f;
@@ -106,6 +122,7 @@ void Game::addFeedback(int lane, const std::string& type, const sf::Color& color
 }
 
 void Game::update(float deltaTime, float currentTimeMs) {
+    if (isPaused) return;
     Conductor::update(song);
     float audioTimeMs = Conductor::songPosition;
     lastUpdatedTime = audioTimeMs;
@@ -199,8 +216,23 @@ void Game::draw(sf::RenderWindow& window) {
     for (const auto& fb : feedbacks) {
         window.draw(fb.text);
     }
+
+    // --- DODANO: Wyświetlanie napisu pauzy na wierzchu ---
+    if (isPaused) {
+        window.draw(pauseText);
+    }
 }
 
 bool Game::isSongFinished() const {
     return song.getStatus() == sf::SoundStream::Stopped;
+}
+
+//funkcja pauzy
+void Game::togglePause() {
+    isPaused = !isPaused;
+    if (isPaused) {
+        song.pause(); // SFML wstrzymuje odtwarzanie muzyki
+    } else {
+        song.play();  // Wznawianie
+    }
 }
