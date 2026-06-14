@@ -10,19 +10,18 @@ void Note::updateSynced(float currentSongPositionMs) {
     rotation = currentSongPositionMs * (rotationSpeed / 100.0f);
 }
 
-// Implementacja rysowania pojedynczej nuty na danej ścieżce (lane)
 void Note::draw(sf::RenderWindow& window) const {
-    sf::CircleShape circle(30.f);
-    circle.setOrigin(30.f, 30.f);
+    sf::CircleShape circle(25.f);
+    circle.setOrigin(25.f, 25.f);
 
-    // Rozmieszczenie nut w 5 kolumnach co 120 pikseli
-    circle.setPosition(160.f + lane * 120.f, yPos);
+    // Pozycjonowanie X zsynchronizowane z receptorami w Game::draw
+    float xPos = 50.0f + (lane * 100.0f);
+    circle.setPosition(xPos, yPos);
 
-    // Kolor zależny od kolumny (lane)
-    if (lane == 0) circle.setFillColor(sf::Color::Red);
-    else if (lane == 1) circle.setFillColor(sf::Color::Blue);
-    else if (lane == 2) circle.setFillColor(sf::Color::Yellow);
-    else if (lane == 3) circle.setFillColor(sf::Color::Green);
+    if (lane == 1) circle.setFillColor(sf::Color::Green);
+    else if (lane == 2) circle.setFillColor(sf::Color::Red);
+    else if (lane == 3) circle.setFillColor(sf::Color::Yellow);
+    else if (lane == 4) circle.setFillColor(sf::Color::Blue);
     else circle.setFillColor(sf::Color::Magenta);
 
     window.draw(circle);

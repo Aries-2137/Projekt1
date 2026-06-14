@@ -5,6 +5,7 @@
 #include <sstream>
 #include <algorithm>
 #include <cmath>
+#include "InputHandler.h"
 
 Game::Game(const std::string& dummy) : lastUpdatedTime(0.0f) {
     if (!font.loadFromFile("assets/arial.ttf")) {
@@ -121,27 +122,20 @@ void Game::addFeedback(int lane, const std::string& type, const sf::Color& color
     feedbacks.push_back(fb);
 }
 
-void Game::update(float deltaTime, float currentTimeMs) {
+void Game::update(float deltaTime, float currentTimeMs, InputHandler& inputHandler) {
     if (isPaused) return;
+
+    // Pobieramy czas z Conductora
     Conductor::update(song);
     float audioTimeMs = Conductor::songPosition;
+
     lastUpdatedTime = audioTimeMs;
+    int currentWholeBeat = static_cast<int>(Conductor::currentBeat);
 
     infoText.setString("BEAT: " + std::to_string(Conductor::currentBeat) + "  |  BPM: " + std::to_string(static_cast<int>(Conductor::bpm)));
-
-    // DODANO: Aktualizacja chmur
     cloudModifier.update(deltaTime);
 
-    for (int i = 1; i <= 5; ++i) {
-        if (Conductor::justTriggeredBeat && receptorScales[i] <= 1.0f) {
-            receptorScales[i] = 1.1f;
-        }
-        if (receptorScales[i] > 1.0f) {
-            receptorScales[i] -= 3.0f * deltaTime;
-            if (receptorScales[i] < 1.0f) receptorScales[i] = 1.0f;
-        }
-    }
-
+    // 2. WTACZANIE NUT NA EKRAN (1500 ms przed ich targetTime)
     auto it = allNotes.begin();
     while (it != allNotes.end()) {
         if (audioTimeMs >= static_cast<float>((*it)->getTargetTime()) - 1500.0f) {
@@ -152,15 +146,68 @@ void Game::update(float deltaTime, float currentTimeMs) {
         }
     }
 
+    // 3. AKTUALIZACJA POZYCJI (Używamy audioTimeMs!)
     for (auto& note : activeNotes) {
         note->updateSynced(audioTimeMs);
     }
 
+    for (auto& note : activeNotes) {
+        if (note->getDuration() > 1 && note->getIsBeingHeld()) {
+            int lane = note->getLane();
+            bool isPlayerHoldingKey = isLaneKeyPressed[lane];
+            bool safetyBufferPassed = (audioTimeMs > static_cast<float>(note->getTargetTime()) + 250.0f);
+
+            if (isPlayerHoldingKey || !safetyBufferPassed) {
+                if (currentWholeBeat > note->getLastScoredBeat()) {
+                    note->setLastScoredBeat(currentWholeBeat);
+                    inputHandler.addScore(10);
+                    this->triggerReceptorAnimation(lane);
+                }
+            } else {
+                // Gracz puścił klawisz -> Przerywamy cicho trzymanie ogona.
+                // Usunięto wywoływanie MISS - nuta po prostu przestanie dawać punkty.
+                note->setBeingHeld(false);
+            }
+        }
+    }
+
+    // =================================================================
+    // 5. BEZPIECZNE USUWANIE SKOŃCZONYCH NUT
+    // =================================================================
+    for (auto activeIt = activeNotes.begin(); activeIt != activeNotes.end(); ) {
+        float noteEndTime = static_cast<float>((*activeIt)->getTargetTime());
+
+        // Jeśli nuta jest holdem (duration > 1), jej czas życia wydłuża się o czas trwania ogona
+        if ((*activeIt)->getDuration() > 1) {
+            // Zakładamy długość holda z pliku jako milisekundy (np. 2535ms)
+            noteEndTime += static_cast<float>((*activeIt)->getDuration());
+        }
+
+        // Warunek usunięcia: Czas audio przekroczył całkowity czas życia nuty
+        bool noteIsFinished = (audioTimeMs > noteEndTime);
+
+        if ((*activeIt)->getDuration() > 1 && (*activeIt)->getIsBeingHeld() && !noteIsFinished) {
+            // Dopóki hold trwa i nie minął jego pełny czas końcowy - nie usuwamy go!
+            ++activeIt;
+        }
+        else if (noteIsFinished) {
+            activeIt = activeNotes.erase(activeIt);
+        }
+        else {
+            ++activeIt;
+        }
+    }
+
+    // 6. CZYSZCZENIE NUT KTÓRE SPADŁY POD EKRAN I ZOSTAŁY POMINIĘTE
     activeNotes.erase(std::remove_if(activeNotes.begin(), activeNotes.end(),
                                      [](const std::unique_ptr<Note>& note) {
-                                         return note->getY() > 1000.0f;
+                                         if (note->getDuration() > 1 && note->getIsBeingHeld()) {
+                                             return false;
+                                         }
+                                         return note->getY() > 1050.0f;
                                      }), activeNotes.end());
 
+    // 7. FEEDBACKI TEKSTOWE
     for (auto fbIt = feedbacks.begin(); fbIt != feedbacks.end(); ) {
         fbIt->timer -= deltaTime;
         fbIt->y -= 80.0f * deltaTime;
@@ -170,10 +217,15 @@ void Game::update(float deltaTime, float currentTimeMs) {
     }
 }
 
+// ==========================================================
+// TO MUSI BYĆ NA SAMYM DOLE PLIKU Game.cpp (zamiast Note::draw)
+// ==========================================================
+
 void Game::draw(sf::RenderWindow& window) {
     float beatProgress = Conductor::currentBeat - std::floor(Conductor::currentBeat);
     sf::Uint8 lineAlpha = static_cast<sf::Uint8>(40.0f + (1.0f - beatProgress) * 60.0f);
 
+    // 1. Rysowanie linii siatki
     for (int i = 1; i <= 5; ++i) {
         float xPos = 50.0f + (i * 100.0f);
         sf::Vertex line[] = {
@@ -183,6 +235,7 @@ void Game::draw(sf::RenderWindow& window) {
         window.draw(line, 2, sf::Lines);
     }
 
+    // 2. Rysowanie receptorów
     for (int i = 1; i <= 5; ++i) {
         float xPos = 50.0f + (i * 100.0f);
         float yPos = 750.0f;
@@ -205,19 +258,19 @@ void Game::draw(sf::RenderWindow& window) {
         window.draw(receptor);
     }
 
+    // 3. Rysowanie nut na ekranie
     for (auto& note : activeNotes) {
         note->draw(window);
     }
 
-    // DODANO: Rysowanie chmur NAD nutami, ale POD tekstami interfejsu
+    // 4. Rysowanie reszty elementów (chmury, napisy, pauza)
     cloudModifier.draw(window);
-
     window.draw(infoText);
+
     for (const auto& fb : feedbacks) {
         window.draw(fb.text);
     }
 
-    // --- DODANO: Wyświetlanie napisu pauzy na wierzchu ---
     if (isPaused) {
         window.draw(pauseText);
     }
@@ -227,7 +280,7 @@ bool Game::isSongFinished() const {
     return song.getStatus() == sf::SoundStream::Stopped;
 }
 
-//funkcja pauzy
+// Funkcja pauzy
 void Game::togglePause() {
     isPaused = !isPaused;
     if (isPaused) {

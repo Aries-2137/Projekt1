@@ -26,6 +26,10 @@ int main() {
     sf::RenderWindow window(sf::VideoMode(800, 1000), "AGH Rhythm Game");
     window.setFramerateLimit(60);
 
+    // !!! KLUCZOWE !!! Wyłączamy powtarzanie klawiszy systemu Windows.
+    // Dzięki temu KeyPressed odpali się TYLKO RAZ przy wciśnięciu, a KeyReleased TYLKO RAZ przy puszczeniu.
+    window.setKeyRepeatEnabled(false);
+
     auto previousTime = std::chrono::high_resolution_clock::now();
     bool isSongFiredUp = false;
 
@@ -56,22 +60,32 @@ int main() {
                 }
             }
 
-            // 2. KLAWIATURA W GRZE
+            // 2. KLAWIATURA W GRZE - CAŁKOWICIE NAPRAWIONA SEKCJA EVENTOWA
             if (currentState == GameState::PLAYING) {
                 if (event.type == sf::Event::KeyPressed || event.type == sf::Event::KeyReleased) {
                     char key = '\0';
-                    if (event.key.code == sf::Keyboard::S) key = 'S';
-                    else if (event.key.code == sf::Keyboard::D) key = 'D';
-                    else if (event.key.code == sf::Keyboard::Space) key = ' ';
-                    else if (event.key.code == sf::Keyboard::J) key = 'J';
-                    else if (event.key.code == sf::Keyboard::K) key = 'K';
-                    else if (event.key.code == sf::Keyboard::P) key = 'P';
+                    int targetLane = -1;
+
+                    // Mapujemy klawisze fizyczne na ścieżki w grze (1-5)
+                    if (event.key.code == sf::Keyboard::S) { key = 'S'; targetLane = 1; }
+                    else if (event.key.code == sf::Keyboard::D) { key = 'D'; targetLane = 2; }
+                    else if (event.key.code == sf::Keyboard::Space) { key = ' '; targetLane = 3; }
+                    else if (event.key.code == sf::Keyboard::J) { key = 'J'; targetLane = 4; }
+                    else if (event.key.code == sf::Keyboard::K) { key = 'K'; targetLane = 5; }
 
                     if (key != '\0') {
                         if (event.type == sf::Event::KeyPressed) {
+                            // Gracz kliknął klawisz -> blokujemy stan jako TRZYMANY
+                            if (targetLane != -1) {
+                                game.isLaneKeyPressed[targetLane] = true;
+                            }
                             inputHandler.handleKeyPress(key, Conductor::songPosition, game.getActiveNotes(), game);
                         }
-                        else {
+                        else if (event.type == sf::Event::KeyReleased) {
+                            // Gracz podniósł palec -> ściągamy stan trzymania
+                            if (targetLane != -1) {
+                                game.isLaneKeyPressed[targetLane] = false;
+                            }
                             inputHandler.handleKeyRelease(key, Conductor::songPosition, game);
                         }
                     }
@@ -82,7 +96,6 @@ int main() {
             if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
                 sf::Vector2i mousePos = sf::Mouse::getPosition(window);
                 if (currentState == GameState::MENU) {
-                    // DODANO: Obsługa kliknięcia panelu chmur jako pierwsza
                     game.getCloudModifier().handleMouseClick(mousePos);
 
                     GameState nextState = interface.handleMenuClick(mousePos);
@@ -98,14 +111,15 @@ int main() {
                 else if (currentState == GameState::SCOREBOARD) {
                     currentState = interface.handleScoreboardClick(mousePos);
                 }
+                else if (currentState == GameState::HOW_TO_PLAY) {
+                    currentState = interface.handleHowToPlayClick(mousePos);
+                }
             }
-            // DODANO: Zwolnienie kliknięcia myszy (do suwaka)
             else if (event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left) {
                 if (currentState == GameState::MENU) {
                     game.getCloudModifier().handleMouseRelease();
                 }
             }
-            // DODANO: Ruch myszą (do aktualizacji suwaka w czasie rzeczywistym)
             else if (event.type == sf::Event::MouseMoved) {
                 if (currentState == GameState::MENU) {
                     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
@@ -119,7 +133,7 @@ int main() {
 
         if (currentState == GameState::MENU) {
             interface.drawMenu(window);
-            game.getCloudModifier().drawButton(window); // <-- DODANO
+            game.getCloudModifier().drawButton(window);
         }
         else if (currentState == GameState::SCOREBOARD) {
             interface.drawScoreboard(window, scoreManager);
@@ -127,8 +141,11 @@ int main() {
         else if (currentState == GameState::ENTER_NICKNAME) {
             interface.drawEnterNickname(window, playerNick);
         }
+        else if (currentState == GameState::HOW_TO_PLAY) {
+            interface.drawHowToPlay(window);
+        }
         else if (currentState == GameState::PLAYING) {
-            game.update(deltaTime, Conductor::songPosition);
+            game.update(deltaTime, Conductor::songPosition, inputHandler);
             game.draw(window);
 
             sf::Text scoreText("Punkty: " + std::to_string(inputHandler.getTotalScore()), font, 24);

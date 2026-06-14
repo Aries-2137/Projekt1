@@ -24,5 +24,6 @@ public:
 
     int getTotalScore() const;
     void resetCombo();
+    void addScore(int points) { totalScore += points; }
 
 };

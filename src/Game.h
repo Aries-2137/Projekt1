@@ -9,6 +9,7 @@
 #include "Note.h"
 #include "NoteType.h"
 #include "CloudModifier.h" // <-- DODANO
+class InputHandler;
 
 class Game {
 public:
@@ -17,7 +18,7 @@ public:
 
     void loadNewSong(const std::string& filename);
     void loadSongSequence(const std::string& filename);
-    void update(float deltaTime, float currentTimeMs);
+    void update(float deltaTime, float currentTimeMs, InputHandler& inputHandler);
     void draw(sf::RenderWindow& window);
     bool isSongFinished() const;
     void togglePause(); //do pauzy
@@ -31,6 +32,7 @@ public:
 
     // NOWOŚĆ: Dostęp do modyfikatora chmur
     CloudModifier& getCloudModifier() { return cloudModifier; }
+    bool isLaneKeyPressed[6] = { false, false, false, false, false, false };
 
 
 private:
